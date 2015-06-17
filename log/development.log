@@ -20349,3 +20349,901 @@ Processing by PostsController#index as HTML
   [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "posts"
   Rendered posts/index.html.erb within layouts/application (294.8ms)
 Completed 200 OK in 636ms (Views: 619.4ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/adotar" for 127.0.0.1 at 2015-06-17 03:26:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35mPost Load (1.8ms)[0m  SELECT "posts".* FROM "posts"
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Documentet> at /home/rafaelbenaion/site/encontrepet/app/models/documentet.rb:2)
+  [1m[36mDocumentet Load (1.8ms)[0m  [1mSELECT  "documentets".* FROM "documentets" WHERE "documentets"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mDocumentet Load (1.2ms)[0m  [1mSELECT  "documentets".* FROM "documentets" WHERE "documentets"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (652.5ms)
+Completed 200 OK in 3605ms (Views: 3409.5ms | ActiveRecord: 37.1ms)
+
+
+Started GET "/assets/posts.self-d29596f9201462f417563bdc4fb047b930c3203edec21b9f68fe91debef86457.css?body=1" for 127.0.0.1 at 2015-06-17 03:26:29 -0300
+
+
+Started GET "/assets/profiles.self-a20c6975e02424417c42cd480e8b84c83f22f8d1476a4529a61d33875cea5e92.css?body=1" for 127.0.0.1 at 2015-06-17 03:26:29 -0300
+
+
+Started GET "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg?1434171427" for 127.0.0.1 at 2015-06-17 03:26:29 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/middleware.rb:37:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb:19:in `run'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb:286:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/command.rb:7:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client.rb:26:in `run'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/bin/spring:48:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (224.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (3.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (59.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (119.9ms)
+
+
+Started GET "/system/documentets/attachmentets/000/000/002/thumb/alone.JPG?1434255158" for 127.0.0.1 at 2015-06-17 03:26:30 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/documentets/attachmentets/000/000/002/thumb/alone.JPG"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/middleware.rb:37:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb:19:in `run'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb:286:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/command.rb:7:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client.rb:26:in `run'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/bin/spring:48:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (175.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (47.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (97.2ms)
+
+
+Started POST "/conversations" for 127.0.0.1 at 2015-06-17 03:26:34 -0300
+Processing by ConversationsController#create as */*
+  Parameters: {"sender_id"=>"1", "recipient_id"=>"1"}
+  [1m[35mUser Load (5.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mConversation Load (2.7ms)[0m  [1mSELECT "conversations".* FROM "conversations" WHERE ((conversations.sender_id = '1' AND conversations.recipient_id ='1') OR (conversations.sender_id = '1' AND conversations.recipient_id ='1'))[0m
+  [1m[35mConversation Load (1.9ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE ((conversations.sender_id = '1' AND conversations.recipient_id ='1') OR (conversations.sender_id = '1' AND conversations.recipient_id ='1'))  ORDER BY "conversations"."id" ASC LIMIT 1
+Completed 200 OK in 43ms (Views: 0.7ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/conversations/2" for 127.0.0.1 at 2015-06-17 03:26:34 -0300
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mConversation Load (1.3ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMessage Exists (2.2ms)[0m  [1mSELECT  1 AS one FROM "messages" WHERE "messages"."conversation_id" = $1 LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mMessage Load (1.8ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  [["conversation_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered messages/_message.html.erb (108.3ms)
+  Rendered conversations/show.html.erb (181.5ms)
+Completed 200 OK in 272ms (Views: 183.4ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/conversations/2/messages" for 127.0.0.1 at 2015-06-17 03:26:37 -0300
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"hm"}, "conversation_id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mConversation Load (1.7ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "messages" ("body", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["body", "hm"], ["conversation_id", 2], ["user_id", 1], ["created_at", "2015-06-17 06:26:37.610936"], ["updated_at", "2015-06-17 06:26:37.610936"]]
+  [1m[36m (27.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered messages/_message.html.erb (4.9ms)
+  Rendered messages/create.js.erb (38.9ms)
+Completed 200 OK in 119ms (Views: 53.0ms | ActiveRecord: 35.5ms)
+
+
+Started GET "/adotar" for 127.0.0.1 at 2015-06-17 03:30:30 -0300
+Processing by PostsController#index as HTML
+  [1m[35mUser Load (3.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "conversations" WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)
+  [1m[36mConversation Load (2.2ms)[0m  [1mSELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC[0m
+  [1m[35mPost Load (1.6ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (415.1ms)
+Completed 500 Internal Server Error in 435ms (ActiveRecord: 10.1ms)
+
+ActionView::Template::Error (undefined method `conversation_interlocutor' for #<#<Class:0x00000004e92588>:0x00000007e07c78>):
+    88:                   <%= image_tag("http://placehold.it/50x50", class: "media-object pull-left") %>
+    89:                   <div class="media-body">
+    90:                     <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id %>
+    91:                         <h4 class="media-heading"><%= conversation_interlocutor(conversation).name %></h4>
+    92:                         <p><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
+    93:                   </div>
+    94:                 </li>
+  app/views/posts/index.html.erb:91:in `block in _app_views_posts_index_html_erb___1100958082805707332_66073700'
+  app/views/posts/index.html.erb:86:in `_app_views_posts_index_html_erb___1100958082805707332_66073700'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (51.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (22.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (124.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (3.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (2.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (108.6ms)
+
+
+Started GET "/adotar" for 127.0.0.1 at 2015-06-17 03:31:15 -0300
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE (NOT (id = 1))  ORDER BY created_at DESC
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "conversations" WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)[0m
+  [1m[35mConversation Load (1.7ms)[0m  SELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (1.8ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (1.9ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1  [["conversation_id", 1]]
+  [1m[36mPost Load (1.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Documentet> at /home/rafaelbenaion/site/encontrepet/app/models/documentet.rb:2)
+  [1m[35mDocumentet Load (1.3ms)[0m  SELECT  "documentets".* FROM "documentets" WHERE "documentets"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mDocumentet Load (1.8ms)[0m  SELECT  "documentets".* FROM "documentets" WHERE "documentets"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (529.7ms)
+Completed 200 OK in 1253ms (Views: 1116.9ms | ActiveRecord: 50.9ms)
+
+
+Started GET "/assets/batepapo.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:16 -0300
+
+
+Started GET "/assets/bootstrap-theme.self-002ec18c4ef1b94201d2f1b5b85e40bd5cc828a9a5f0561f74e39fb0ff1e3228.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:16 -0300
+
+
+Started GET "/assets/bootstrap.self-785279ca494174403a4ea2cdd247ff847f1320b8579aa72c28f28d0ee5ad8165.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:16 -0300
+
+
+Started GET "/assets/chat.self-bb6871199a8e7e11f52b841289531d6fc63a9e41818168e5f4800985c20c5ff7.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:16 -0300
+
+
+Started GET "/assets/conversations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/posts.self-f1930159bda9f907eda3742d092e21b8a00a1881ace4a896aa2486cad9b841a7.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/profiles.self-a20c6975e02424417c42cd480e8b84c83f22f8d1476a4529a61d33875cea5e92.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/application.self-8034777e63be5d4bb32d10b25dd6941499e8931a5398873fc53859de7ed465a0.css?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/bootstrap.min.self-0a65aa3a620a64312bae4036782aace3626cbd19bb8850450beaa0a980620783.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/private_pub.self-b110feb9d6b39a3b0dc59510984a4ff9ad14a15e427afbd7474c4531dbb660a6.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/chat.self-c43c3e3834508c399d53136c7fae753d80c41e7aa6ef69fc93c04349c28a11d7.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/batepapo.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/conversations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/users.self-cb66e2ef4720d131656110ca068b99462af0ec446f05591d4ddef04f3d9a09a6.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+
+Started GET "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg?1434171427" for 127.0.0.1 at 2015-06-17 03:31:17 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/middleware.rb:37:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb:19:in `run'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb:286:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/command.rb:7:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client.rb:26:in `run'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/bin/spring:48:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (223.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (54.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (111.4ms)
+
+
+Started GET "/system/documentets/attachmentets/000/000/002/thumb/alone.JPG?1434255158" for 127.0.0.1 at 2015-06-17 03:31:18 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/documentets/attachmentets/000/000/002/thumb/alone.JPG"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/middleware.rb:37:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb:19:in `run'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb:286:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/command.rb:7:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client.rb:26:in `run'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/bin/spring:48:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (215.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (54.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (112.2ms)
+
+
+Started POST "/conversations" for 127.0.0.1 at 2015-06-17 03:31:22 -0300
+Processing by ConversationsController#create as */*
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mConversation Load (1.5ms)[0m  SELECT "conversations".* FROM "conversations" WHERE ((conversations.sender_id = NULL AND conversations.recipient_id =NULL) OR (conversations.sender_id = NULL AND conversations.recipient_id =NULL))
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mConversation Exists (1.3ms)[0m  SELECT  1 AS one FROM "conversations" WHERE ("conversations"."sender_id" IS NULL AND "conversations"."recipient_id" IS NULL) LIMIT 1
+  [1m[36m (3.6ms)[0m  [1mROLLBACK[0m
+Completed 422 Unprocessable Entity in 42ms (ActiveRecord: 8.7ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Sender has already been taken):
+  app/controllers/conversations_controller.rb:10:in `create'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (2.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (3.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (56.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (47.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (94.8ms)
+
+
+Started GET "/adotar" for 127.0.0.1 at 2015-06-17 03:31:23 -0300
+Processing by PostsController#index as HTML
+  Parameters: {"authenticity_token"=>"LcdWhGEA8SLO0qo4aZBUE2IxC3tsjZBO9QTpHuJr6r7jW3rk+3XYmogiY7eHVZFaEXbXOweQM1E4mLefkj0e2w=="}
+  [1m[35mUser Load (2.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35m (2.1ms)[0m  SELECT COUNT(*) FROM "conversations" WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)
+  [1m[36mConversation Load (1.5ms)[0m  [1mSELECT "conversations".* FROM "conversations" WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMessage Load (1.5ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mMessage Load (1.3ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1  [["conversation_id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  ORDER BY "messages"."id" DESC LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mPost Load (1.8ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mDocumentet Load (1.6ms)[0m  [1mSELECT  "documentets".* FROM "documentets" WHERE "documentets"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mDocumentet Load (1.4ms)[0m  [1mSELECT  "documentets".* FROM "documentets" WHERE "documentets"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (2.8ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (374.0ms)
+Completed 200 OK in 717ms (Views: 687.7ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg?1434171427" for 127.0.0.1 at 2015-06-17 03:31:24 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/middleware.rb:37:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb:19:in `run'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb:286:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/command.rb:7:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client.rb:26:in `run'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/bin/spring:48:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (202.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (2.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (105.3ms)
+
+
+Started GET "/system/documentets/attachmentets/000/000/002/thumb/alone.JPG?1434255158" for 127.0.0.1 at 2015-06-17 03:31:24 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/documentets/attachmentets/000/000/002/thumb/alone.JPG"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/middleware.rb:37:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb:19:in `run'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb:286:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/command.rb:7:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client.rb:26:in `run'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/bin/spring:48:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (179.4ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (46.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (96.2ms)
+
+
+Started GET "/conversations/2" for 127.0.0.1 at 2015-06-17 03:31:28 -0300
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mConversation Load (1.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMessage Exists (1.4ms)[0m  SELECT  1 AS one FROM "messages" WHERE "messages"."conversation_id" = $1 LIMIT 1  [["conversation_id", 2]]
+  [1m[36mMessage Load (1.5ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered messages/_message.html.erb (76.0ms)
+  Rendered conversations/show.html.erb (108.9ms)
+Completed 200 OK in 148ms (Views: 112.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/conversations/1" for 127.0.0.1 at 2015-06-17 03:31:30 -0300
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mConversation Load (1.3ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMessage Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "messages" WHERE "messages"."conversation_id" = $1 LIMIT 1[0m  [["conversation_id", 1]]
+  [1m[35mMessage Load (3.8ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1  [["conversation_id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered messages/_message.html.erb (260.1ms)
+  Rendered conversations/show.html.erb (298.3ms)
+Completed 200 OK in 328ms (Views: 297.1ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2015-06-17 03:32:06 -0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (24.8ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mDocumentet Load (1.1ms)[0m  SELECT  "documentets".* FROM "documentets" WHERE "documentets"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 427ms (Views: 390.0ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg?1434171427" for 127.0.0.1 at 2015-06-17 03:32:06 -0300
+
+ActionController::RoutingError (No route matches [GET] "/system/documentets/attachmentets/000/000/001/thumb/InstaSize_2015_5___23422.jpg"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/middleware.rb:37:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/methodoverride.rb:22:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/runtime.rb:18:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/sendfile.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/content_length.rb:15:in `call'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:86:in `block in pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `catch'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:84:in `pre_process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:53:in `process'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/connection.rb:39:in `receive_data'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  vendor/bundle/ruby/2.2.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  vendor/bundle/ruby/2.2.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/handler/thin.rb:19:in `run'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.6.2/lib/rack/server.rb:286:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/rails.rb:28:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client/command.rb:7:in `call'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/client.rb:26:in `run'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/bin/spring:48:in `<top (required)>'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `load'
+  vendor/bundle/ruby/2.2.0/gems/spring-1.3.6/lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (183.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (48.3ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (99.8ms)
