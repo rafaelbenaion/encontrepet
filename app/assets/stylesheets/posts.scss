@@ -1,0 +1,280 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+footer {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 30px;
+}
+
+#adotar_botao {
+	padding-bottom: 10px;
+
+}
+
+#botaofinal {
+	display: block;
+	text-align: center;
+}
+
+h2 {
+	margin-top: 10px;
+}
+
+
+.modal-body {
+  text-align: left;
+}
+
+img {
+  max-width: 70%;
+}
+
+#foto_ficha {
+	display: block;
+	margin: 10px auto;
+	border: 4px solid #36A09C;
+
+}
+
+.thumbnail {
+
+	max-width: 500px;
+	display: block;
+	padding: 0;
+	margin: 20px auto; 
+	
+}
+
+body {
+	background-color: #43c8c3;
+}
+
+.jumbotron {
+	background-color: #fff;
+	padding: 8px 20px 8px 20px;
+}
+
+#ficarmenor {
+	max-width: 500px;
+	display: block;
+	margin: 10px 0 auto;
+	border: 4px solid #36A09C;
+	border-radius: 0;
+}
+
+
+.fotoperfil {
+	padding:0;
+
+}
+
+#cor {
+  background-color: #f1f2f3;
+}
+
+#logo {
+	max-width: 100%;
+  padding-left: 5px;
+}
+
+#ficarmenor2 {
+	max-width: 500px;
+	display: block;
+	margin: 10px 0 auto;
+	border: 4px solid #36A09C;
+	border-radius: 0;
+	display: block;
+	margin: 15px auto;
+}
+
+.navbar {
+border-bottom: 6px inset #FF6600;
+
+}
+
+
+#riscosempadd {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  text-align: center;
+  display: block;
+}
+
+h2 {
+  margin-top: 10;
+  
+}
+
+
+#animal {
+text-align: center;
+border: 4px solid #36A09C;
+border-radius: 0;
+
+}
+
+h4 {
+  margin: 4px 2px;
+
+}
+
+
+
+h2 {
+  margin: 10px 10px;
+  padding: 5px 0 0 0;
+
+
+}
+
+
+
+.bot {
+  margin-bottom: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+}
+
+p {
+      max-width: 500px;
+      padding: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+}
+
+#riscocompadd {
+  padding-bottom: 0;
+  padding-top: 10px;
+}
+
+#cor {
+  padding-bottom: 10px;
+}
+
+#adotar_botao {
+  margin: 0 5px;
+}
+
+.texto img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#salve {
+  text-align: center;
+  background-color: #FF6600;
+  background-position: 80% 30%;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  color: white;
+  border-top: 8px outset #36A09C;
+  border-bottom: 8px inset #CC5200;
+  padding-top: 0;
+  margin-top: 40px;
+  margin-bottom: 0;
+  
+}
+
+.texto h1 {
+  margin: 0;
+}
+
+.alert {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 0;
+  }
+
+  #cards{
+    color: #31908C;
+  }
+
+
+
+.raised {
+    background-color: #FF6600;
+    box-shadow: 0 3px 0 0 #CC5200;
+    border: 0;
+}
+
+
+#ficarmenor3 {
+text-align: center;
+border: 4px solid #36A09C;
+border-radius: 0;
+margin-top: 10px;
+color: #31908C;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+#ficarmenor3 legend {
+  color: #31908C;
+}
+
+#quebragalho {
+  padding: 0;
+  border: 4px solid #36A09C;
+  border-radius: 0;
+  text-align: center;
+  color: #31908C;
+  padding-top: 20px;
+}
+
+#quebragalho img {
+  max-width: 70%;
+  border: 4px solid #FF6600;
+
+}
+
+#nomeanimal {
+  color: #FF6600;
+}
+
+#filtro {
+  padding: 10px 50px;
+  color: #31908C;
+  border-bottom: 8px solid #36A09C;
+  background-color: #fff;
+  text-align: center;
+}
+
+#mostrarfiltro {
+  padding: 10px 0px;
+  color: #FFF;
+  text-align: center;
+}
+
+#mostrarfiltro strong {
+  padding-left: 10px;
+}
+.procurar {
+  color: #31908C;
+}
+
+#botaonave {
+ 
+ text-align: center;
+  padding-right: 3px;
+  color: #31908C;
+}
+
+
+footer {
+  color: #fff;
+}

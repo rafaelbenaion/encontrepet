@@ -1,0 +1,53 @@
+<div class="jumbotron" id="ficarmenor2">	
+<%= simple_form_for(@post, html: {multipart: true}) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+   
+    </div>
+  <% end %>
+
+<legend><h4>Ficha do Animal</h4></legend>
+
+<%= f.input :name, label: "Nome do animal:" %>
+
+<%= f.input :age, label: "Idade :", placeholder: 'Exemplo: 5 meses'  %>
+
+<%= f.input :animal, label: "Animal :", :as => :select, :collection => [['Cachorro', :Cachorro], ['Gato', :Gato], ['Outro', :Outro]]  %>
+
+<%= f.input :gender, :as => :select, :collection => [['Macho', :Macho], ['Fêmea', :Fêmea]], label: "Gênero :" %>
+
+<%= f.input :size, label: "Tamanho :", :as => :select, :collection => [['Pequeno', :Pequeno], ['Médio', :Médio], ['Grande', :Grande]]  %>
+
+<%= f.input :castrado, label: "Castrado :", :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
+
+<%= f.input :vacinado, label: "Vacinado :", :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
+
+<%= f.input :about,label: "Descrição :", input_html: { rows: 4, class: 'input-xxlarge'}, placeholder: 'Escreva informações sobre o animal como cor, seu comportamento, onde foi encontrado e se foi desverminado.'  %>
+
+<%= f.fields_for :documentet do |documentet_fields| %>
+	
+<%= documentet_fields.input :attachmentet, as: :file, label: "Foto do Animal:" %>
+	
+	<% if documentet_fields.object.attachmentet? %>
+	<div class="control-group">
+		<h4><span class="label label-danger">Envie a foto novamente !</span></h4>
+	</div>
+	<% end %>
+
+<% end %>
+</br >
+
+<legend><h4>Informações do Doador</h4></legend>
+
+<%= f.input :cidade, label: "Cidade :", placeholder: 'Cidade e Estado'  %>
+
+<%= f.input :telefone, label: "Telefone :", placeholder: '(XX) XXXX-XXXX'  %>
+
+<%= f.input :celular, label: "Celular :", placeholder: '(XX) XXXX-XXXX'  %>
+
+
+<%= f.button :submit, "Salvar Publicação", :class => "btn btn-primary btn-block"%>
+<%= link_to 'Cancelar', posts_path, :class => "btn btn-danger btn-block", data: { confirm: 'Você tem certeza ?' } %>
+  
+</div>
+<% end %>

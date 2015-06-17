@@ -1,0 +1,62 @@
+
+
+<div class="jumbotron" id="ficarmenor">
+<legend><h3>Editar informações :</h3></legend>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.input :email, autofocus: true, :label => "Alterar email:" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <strong>Alterar senha:</strong>
+  <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Mudar senha
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="well">
+      <div class="field">
+    <%= f.input :password, autocomplete: "off", label: "Nova senha:" %>
+  </div>
+  <div class="field">
+  <%= f.input :password_confirmation, autocomplete: "off", label: "Confirmar nova senha:" %>
+  </div>
+    </div>
+  </div>
+
+
+  
+
+  <div class="field">
+  </br >
+
+    <%= f.input :current_password, autocomplete: "off", label: "Senha atual:" %>
+    <i>(Insira senha atual para salvar as mudanças.)</i>
+  </br >
+  </div>
+</br >
+
+  <div class="actions">
+    <%= f.button :submit, "Salvar mudanças", :class => "btn btn-primary btn-block" %>
+  </div>
+<% end %>
+
+
+
+</div>
+</br >
+
+
+<div class="jumbotron" id="ficarmenor">
+
+<legend><h3>Cancelar conta</h3></legend>
+
+<h4>Insatisfeito? Cancele sua conta. </h4>
+<%= button_to "Excluir minha conta", registration_path(resource_name), data: { confirm: "Você tem certeza ? Sentiremos sua falta." }, method: :delete , :class => "btn btn-danger btn-block" %>
+
+</div>

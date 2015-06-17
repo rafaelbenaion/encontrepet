@@ -1,0 +1,40 @@
+<style>
+#fotosa{
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  }
+
+
+</style>
+
+<div class="jumbotron" id="ficarmenor2">
+<img id="fotosa" src="/petbook2.png">
+<fieldset>
+
+<legend><h3>Cadastro:</h3></legend>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <%= f.input :first_name, label: "Primeiro nome :" %>
+
+  <%= f.input :last_name, label: "Segundo nome :" %>
+
+  <%= f.input :profile_name, label: "Nome de usuário :" %>
+
+  <%= f.input :email, autofocus: true, label: "Email :" %>
+
+  <%= f.input :password, autocomplete: "off", label: "Senha :" %>  
+  <%= f.input :password_confirmation, autocomplete: "off", label: "Confirmar senha :" %>
+
+  <% if @validatable %>
+  <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %> </br >
+</br >
+<div class="boto">
+  <%= f.button :submit, "Criar conta", :class => "btn btn-success btn-block" %>
+  </fieldset>
+<% end %>
+<h5>ou <%= render "devise/shared/links" %></h5>
+</div>
+</div>

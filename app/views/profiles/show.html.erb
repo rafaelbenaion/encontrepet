@@ -1,0 +1,56 @@
+
+<div class="jumbotron" id="ficarmenor3">
+  
+	<fieldset>
+		<legend id="riscosempadd"><h2><%= @user.name %></h2></legend>
+    <h5>Perfil com todos os animais e contatos de <strong><%= @user.name%></strong>.</h5>
+    <h5><strong>Email: </strong><%= @user.email %></h5>
+    <% if user_signed_in? %>
+        <% if current_user.profile_name.to_str == @user.profile_name.to_str %>
+        <%= link_to 'Fazer uma nova doação', new_post_path, :class => "btn btn-primary" %>
+        <% end %>
+    <% end %>
+
+	</fieldset>
+</div>
+<div class="row">
+    
+<% if @posts %>
+	<% @posts.each do |post| %>
+
+    <div class="col-sm-6 col-md-4">
+      <div class="jumbotron" id="quebragalho">
+      <% if post.documentet && post.documentet.attachmentet? %>
+      <%= image_tag post.documentet.attachmentet.url(:thumb), :class => "fotoperfil" %>
+      
+      <% end %>
+      
+      <h2><%= link_to post.name, post, :id => "nomeanimal" %></h2>
+      <% if user_signed_in? %>
+        <% if current_user.profile_name.to_str == post.user.profile_name.to_str %>
+        <div class="alert alert-warning alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>Aviso:</strong> Se seu animal ja foi doado clique em <strong>excluir</strong> para retirar o post, obrigado.
+    </div>
+            <h6><%= link_to ' Editar', edit_post_path(post), :class => "btn btn-xs btn-primary" %>  <%= link_to ' Apagar', post, method: :delete, data: { confirm: 'Você tem certeza de que quer apagar? Não tem como desfazer depois!' }, :class => "btn btn-xs btn-danger" %></h6>
+        <% end %>
+      <% end %>
+       
+       </div>
+     </div>
+    <% end %>
+ 
+</div>
+<% end %>
+
+<% if @posts.count == 0 %>
+
+<div class="alert alert-warning alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <h6>Nenhum animal para doação nesse perfil.</h6>
+    </div>
+<% end %>
+ 
+
+
+   

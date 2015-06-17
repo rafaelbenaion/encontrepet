@@ -1,0 +1,121 @@
+
+<div class="jumbotron" id="ficarmenor2">
+<legend><h2><%= @post.name %>, <%= @post.age %></h2></legend>
+
+
+  <% if @post.documentet && @post.documentet.attachmentet? %>
+      <%= image_tag @post.documentet.attachmentet.url(:thumb), :alt => "/erroimage.jpg", :id => "foto_ficha" %>
+      <% end %> 
+<legend></legend>
+
+<legend>
+<h5>
+  <strong>Dono:</strong>
+  <%= link_to @post.user.name, id_path(@post.user.profile_name) %>
+</h5>
+</legend>
+
+<legend>  
+<h5>
+  <strong>Cidade:</strong>
+  <%= @post.cidade %>
+</h5>
+</legend>
+
+<legend>  
+<h5>
+  <strong>Animal:</strong>
+  <%= @post.animal %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Gênero:</strong>
+  <%= @post.gender %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Idade:</strong>
+  <%= @post.age %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Tamanho:</strong>
+  <%= @post.size %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Castrado:</strong>
+  <%= @post.castrado %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Vacinado:</strong>
+<%= @post.vacinado %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+<strong>Sobre:</strong>
+<%= @post.about %>
+</h5>
+</legend>
+
+ <legend>
+<h5>
+<strong>Foto:</strong>
+ <%= post_foto @post %>
+</h5>
+</legend>
+
+
+ 
+
+<div id="botaofinal">
+<button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#myModal">Agendar visita</button>
+<%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block" %>
+     
+      <% if user_signed_in? %>
+        <div class="footer">
+          <span class="admin">
+          <% if current_user.profile_name.to_str == @post.user.profile_name.to_str %>
+            <h6><%= link_to ' Editar', edit_post_path(@post), :class => "btn btn-xs btn-primary" %>  <%= link_to ' Apagar', @post, method: :delete, data: { confirm: 'Você tem certeza de que quer apagar? Não tem como desfazer depois!' }, :class => "btn btn-xs btn-danger" %></h6>
+          <% else %>
+          <% end %>
+          </span>
+        </div> 
+      <% else %>
+      <% end %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Contatos para adotar <strong><%=  @post.name %></strong>.</h4>
+      </div>
+      <div class="modal-body">
+      <h4><strong>Dono:</strong> <%= @post.user.name %></h4>
+      <h4><strong>Cidade:</strong> <%= @post.cidade %></h4>
+      <h4><strong>Telefone:</strong> <%= @post.telefone %></h4>
+      <h4><strong>Celular:</strong> <%= @post.celular %></h4>
+      <h4><strong>E-mail:</strong> <%= @post.user.email %></h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>

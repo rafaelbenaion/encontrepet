@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+
+  <title>Encontre Pet</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+      <div class="container-fluid">
+        
+        <div class="navbar-header">
+          <a href="<%= adotar_path %>" class="navbar-brand">
+            <img src="/petbook2.png" id="logo">
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         
+          </button>
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <div id="botaonave">
+          <ul class="nav navbar-nav navbar-left">
+            
+              
+        
+              <%= simple_form_for :post, :method => 'get', :url => "/", :html => {:class => 'form-inline'} do |f| %>
+              <%= f.input :starts_with, input_html: { name: 'starts_with', :value => params[:starts_with], :size => 30, :maxlength => 15 }, label: false, :required => false, :placeholder => "Pesquisar um animal pelo nome"%>
+              <%= f.button :submit, ('Ir'), :class => "btn btn-success navbar-btn" %>
+              <% end %>
+          
+          
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+             <% if user_signed_in? %>
+             
+               <%= link_to 'Meus Animais', id_path(current_user.profile_name), :class => "btn btn-default" %>
+               <%= link_to "Editar conta", edit_user_registration_path, :class => "btn btn-warning navbar-btn sharp" %>
+               <%= link_to 'Sair', sair_path, :class => "btn btn-danger navbar-btn sharp" %>
+            <% else %>
+               <%= link_to 'Cadastrar', cadastrar_path, :class => "btn btn-success navbar-btn sharp" %>
+               <%= link_to 'Entrar', entrar_path, :class => "btn btn-primary navbar-btn sharp" %>
+            <% end %>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+<div class="container">
+
+<% flash.each do |type, message| %>    
+<div class="alert <%= flash_class(type.to_s) %> alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <%= message %>
+</div>
+<% end %> 
+      
+
+    
+
+    <%= yield %>
+    <footer>
+      <h5>© 2015 <a href="http://www.facebook.com/rafael.benaion">Rafael Benaion</a></h5>
+      <%#= <a href="http://www.freepik.com/free-vector/dog-cartoon-vector-design_718544.htm">Cartoons Designed by Freepik</a> %>
+    </footer>
+</div>
+<audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
+</body>

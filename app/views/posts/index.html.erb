@@ -1,0 +1,130 @@
+
+</div> 
+<div class="jumbotron" id="salve">
+  <div class="texto">
+          <img src="/petbook23.png">
+  <h1><strong>Salve uma vida.</strong></h1>
+  <h4>Ache agora uma família para um animal abandonado que precise de ajuda.
+<div class="bot">
+<h5> </h5>
+  <% if user_signed_in? %>
+        <%= link_to 'Fazer uma doação', new_post_path, :class => "btn btn-primary btn-lg" %>
+        <% else %>
+        <%= link_to 'Cadastre-se agora mesmo', cadastrar_path, :class => "btn btn-success btn-lg" %>
+  <% end %>
+  
+</div>
+</div>
+  </div>
+
+<div id="mostrarfiltro">
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Filtrar animais
+</a><strong>Clique para selecionar as opções de filtros.</strong>
+</div>
+
+<div class="collapse" id="collapseExample">
+<div id="filtro">
+<%= simple_form_for :post, :method => 'get', :url => "/", :html => {:class => 'form-inline'} do |f| %>
+
+
+<%= f.input :starts_with, input_html: { name: 'starts_with', :value => params[:starts_with] }, label: ('Nome do animal:  '), :required => false %>
+<%= f.input :gender, input_html: { name: 'gender', :value => params[:gender] }, label: ('Gênero:  '), :required => false, :as => :select, :collection => [['Macho', :Macho], ['Fêmea', :Fêmea]] %>
+<%= f.input :animal, input_html: { name: 'animal', :value => params[:animal] }, label: ('Animal:  '), :required => false, :as => :select, :collection => [['Cachorro', :Cachorro], ['Gato', :Gato], ['Outro', :Outro]]  %>
+<%= f.input :castrado, input_html: { name: 'castrado', :value => params[:castrado] }, label: ('Castrado:  '), :required => false, :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
+<%= f.input :vacinado, input_html: { name: 'vacinado', :value => params[:vacinado] }, label: ('Vacinado:  '), :required => false, :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
+<%= f.input :tamanho, input_html: { name: 'tamanho', :value => params[:tamanho] }, label: ('Tamanho:  '), :required => false, :as => :select, :collection => [['Pequeno', :Pequeno], ['Médio', :Médio], ['Grande', :Grande]]  %>
+
+<%= f.button :submit, ('> Filtrar') %>
+</div>
+</div>
+<%end %>
+
+<div class="row">
+  <!-- Not implemented on tutorial -->
+  <div class="col-md-4">
+    <div style="height: 300px; overflow-y: auto;">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Registered Users</div>
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @users.each_with_index do |user, index| %>
+              <tr>
+                <td><%= index +=1 %></td>
+                <td><%= user.name %></td>
+                <td>
+                  <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                              "data-sid" => current_user.id, "data-rip" => user.id %>
+                </td>
+              </tr>
+          <% end %>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+</div>
+
+<div class="container" id="cards">
+<div class="row">
+
+
+
+
+ 
+<% @posts.each do |post| %>
+   <div class="col-sm-6 col-md-4">
+
+
+    <div class="thumbnail" id="animal">
+      <h2><%= post.name %>, <%= post.age %></h2>
+      
+      <% if post.documentet && post.documentet.attachmentet? %>
+      <%= image_tag post.documentet.attachmentet.url(:thumb), :alt => "erroimage.jpg" %>
+      <% end %>
+
+      <legend></legend>
+      
+      <h4><%= post.animal %> | <%= post.gender %> | Porte <%= post.size %></h4>
+      <legend id="riscocompadd"></legend>
+      <p><%= post.about %></p>
+      <div id="adotar_botao">
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-warning btn-block btn-lg raised" %></h5>
+      <h5><%= link_to "Chat", "#", class: "btn btn-success btn-block start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => post.user.id %></h5>
+
+
+
+      </div> 
+
+    <div class"final" id="cor">
+       <legend></legend>   
+       <h6><strong>Por <%= link_to post.user.name, id_path(post.user.profile_name) %> | <%= time_ago_in_words(post.created_at).capitalize + " ago." %></strong> </h6>
+    </div>
+
+</div>
+ </div>
+    <% end %>
+
+ 
+</div>
+
+</div>
+
+<% if @posts.count == 0 %>
+<div id="animal">
+      <h4><strong>Nenhum animal encontrado.</strong></h4>
+</div>
+<% end %>

@@ -1,0 +1,26 @@
+
+
+<div class="jumbotron" id="ficarmenor2">
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ 
+<fieldset>
+  <legend><h2>Logar</h2></legend>
+ <%= f.input :email, label: "Email :" %>
+ <%= f.input :password, label: "Senha :" %>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.input :remember_me, as: :boolean, label: "Lembrar do email" %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.button :submit, "Logar", :class => "btn btn-primary btn-block" %>
+  </div>
+</fieldset>
+<% end %>
+
+<h5>ou <%= render "devise/shared/links" %></h5>
+
+</div>
