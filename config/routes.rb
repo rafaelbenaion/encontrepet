@@ -2,6 +2,20 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  
+  devise_scope :user do 
+    get "cadastrar", to: "devise/registrations#new", as: :cadastrar
+  end
+
+  devise_scope :user do 
+    get "entrar", to: "devise/sessions#new", as: :entrar
+  end
+
+  devise_scope :user do 
+    get "sair", to: "devise/sessions#destroy", as: :sair
+  end
+
+
   root 'posts#index'
 
   
@@ -15,18 +29,6 @@ Rails.application.routes.draw do
 
   get '/:id', to: 'profiles#show', as: :id
 
-
-  devise_scope :user do 
-    get "cadastrar", to: "devise/registrations#new", as: :cadastrar
-  end
-
-  devise_scope :user do 
-    get "entrar", to: "devise/sessions#new", as: :entrar
-  end
-
-  devise_scope :user do 
-    get "sair", to: "devise/sessions#destroy", as: :sair
-  end
 
   resources :posts
 
