@@ -79,8 +79,6 @@
 </legend>
 
 
- 
-
 <div id="botaofinal">
 <button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#myModal">Agendar visita</button>
 <%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block" %>
@@ -96,7 +94,7 @@
         </div> 
       <% else %>
       <% end %>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -119,3 +117,4 @@
 </div>
 
 </div>
+

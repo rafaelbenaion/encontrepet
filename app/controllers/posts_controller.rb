@@ -24,6 +24,9 @@ end
   # GET /posts/1
   # GET /posts/1.json
   def show
+    
+  @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+  @conversations = Conversation.involving(current_user).order("created_at DESC")
 
   end
 
