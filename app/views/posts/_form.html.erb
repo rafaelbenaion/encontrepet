@@ -45,9 +45,9 @@
 
 <%= f.input :celular, label: "Celular :", placeholder: '(XX) XXXX-XXXX'  %>
 
-
-<%= f.button :submit, "Salvar Publicação", :class => "btn btn-primary btn-block"%>
+<button type="submit" class="btn btn-success btn-lg btn-block">Enviar publicação</button>
 <%= link_to 'Cancelar', posts_path, :class => "btn btn-danger btn-block", data: { confirm: 'Você tem certeza ?' } %>
-  
+
+
 </div>
 <% end %>

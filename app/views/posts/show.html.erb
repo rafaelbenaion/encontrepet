@@ -80,7 +80,7 @@
 
 
 <div id="botaofinal">
-<button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#myModal">Agendar visita</button>
+<button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#myModal">Contatos</button>
 <%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block" %>
      
       <% if user_signed_in? %>
@@ -99,14 +99,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Contatos para adotar <strong><%=  @post.name %></strong>.</h4>
+        <h4 class="modal-title" id="myModalLabel">Contatos para adotar <strong><%=  @post.name %></strong> :</h4>
       </div>
       <div class="modal-body">
-      <h4><strong>Dono:</strong> <%= @post.user.name %></h4>
-      <h4><strong>Cidade:</strong> <%= @post.cidade %></h4>
-      <h4><strong>Telefone:</strong> <%= @post.telefone %></h4>
-      <h4><strong>Celular:</strong> <%= @post.celular %></h4>
-      <h4><strong>E-mail:</strong> <%= @post.user.email %></h4>
+      <h5><strong>Dono:</strong> <%= @post.user.name %></h5>
+      <h5><strong>Cidade:</strong> <%= @post.cidade %></h5>
+      <legend></legend>
+      <h5><strong>Telefone:</strong> <a href="tel:<%= @post.telefone %>"><%= @post.telefone %></a></h5>
+      <h5><strong>Celular:</strong> <a href="tel:<%= @post.celular %>"><%= @post.celular %></a></h5>
+      <h5><strong>E-mail:</strong> <a href="mailto:<%= @post.user.email %>"><%= @post.user.email %></a></h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
@@ -117,4 +118,3 @@
 </div>
 
 </div>
-

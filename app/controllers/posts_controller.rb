@@ -9,10 +9,10 @@ class PostsController < ApplicationController
   def index
   if user_signed_in?
     @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
-    @conversations = Conversation.involving(current_user).order("created_at DESC")
+    @conversations = Conversation.involving(current_user)
   end
   # @posts = Post.order('created_at desc').all 
-  @posts = Post.where(nil) # creates an anonymous scope
+  @posts = Post.where(nil).order("created_at DESC") # creates an anonymous scope
   filtering_params(params).each do |key, value|
     @posts = @posts.public_send(key, value) if value.present?
   end
@@ -26,10 +26,6 @@ end
   # GET /posts/1
   # GET /posts/1.json
   def show
-    
-  @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
-  @conversations = Conversation.involving(current_user).order("created_at DESC")
-
   end
 
   # GET /posts/new
