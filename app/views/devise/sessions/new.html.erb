@@ -2,25 +2,20 @@
 
 <div class="jumbotron" id="ficarmenor2">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :defaults => { :input_html => { :class => "form-control input-lg" } }, as: resource_name, url: session_path(resource_name)) do |f| %>
  
 <fieldset>
-  <legend><h2>Logar</h2></legend>
- <%= f.input :email, label: "Email :" %>
- <%= f.input :password, label: "Senha :" %>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.input :remember_me, as: :boolean, label: "Lembrar do email" %>
-    </div>
-  <% end -%>
+  <h2 id="entrar">Entrar</h2>
+ <%= f.input :email, label: false, :placeholder => "Email" %>
+ <%= f.input :password, label: false, :placeholder => "Senha" %>
 
   <div class="actions">
-    <%= f.button :submit, "Logar", :class => "btn btn-primary btn-block" %>
+    <%= f.button :submit, "Logar", :class => "btn btn-success btn-lg btn-block" %>
   </div>
 </fieldset>
 <% end %>
 
-<h5>ou <%= render "devise/shared/links" %></h5>
+
+<h5 id="entrar2"><strong>Não tem uma conta ? <%= link_to "Cadastre-se", new_registration_path(resource_name) %></strong></h5>
 
 </div>

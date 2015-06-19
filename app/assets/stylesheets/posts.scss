@@ -85,13 +85,15 @@ body {
 }
 
 #ficarmenor2 {
-	max-width: 500px;
+	max-width: 400px;
 	display: block;
 	margin: 10px 0 auto;
-	border: 4px solid #36A09C;
-	border-radius: 0;
+
+	border-radius: 3px;
 	display: block;
-	margin: 15px auto;
+	margin: 40px auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .navbar {
@@ -251,7 +253,8 @@ margin-bottom: 10px;
   color: #31908C;
   border-bottom: 8px solid #36A09C;
   background-color: #fff;
-  text-align: center;
+  display: block;
+  margin: 5px auto;
 }
 
 #mostrarfiltro {
@@ -299,4 +302,47 @@ li.media a {
 
 #historico {
   padding-left: 20px;
+}
+
+#chatbot {
+  padding-left: 40px; 
+  padding-right: 40px;
+}
+
+#cadastrar {
+  float: right;
+}
+
+#entrar {
+  color: #666;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#entrar2 {
+  color: #666;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.form-inline {
+  margin-top: 8px;
+}
+
+#procurar {
+  margin-top: 0;
+}
+
+#procurar2 {
+  max-width: 270px;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+#treta {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }

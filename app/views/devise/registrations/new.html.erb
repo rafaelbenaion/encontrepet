@@ -2,39 +2,37 @@
 #fotosa{
   display: block;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 38%;
   }
-
 
 </style>
 
 <div class="jumbotron" id="ficarmenor2">
-<img id="fotosa" src="/petbook2.png">
+
 <fieldset>
 
-<legend><h3>Cadastro:</h3></legend>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  
-  <%= f.input :first_name, label: "Primeiro nome :" %>
+<h2 id="entrar">Cadastro</h2>
+<%= simple_form_for(resource, :defaults => { :input_html => { :class => "form-control input-lg" } }, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    
+  <%= f.input :first_name, label: false, :placeholder => "Primeiro nome" %>
 
-  <%= f.input :last_name, label: "Segundo nome :" %>
+  <%= f.input :last_name, label: false, :placeholder => "Último nome" %>
 
-  <%= f.input :profile_name, label: "Nome de usuário :" %>
+  <%= f.input :profile_name, label: false, :placeholder => "Nome de usuário" %>
 
-  <%= f.input :email, autofocus: true, label: "Email :" %>
+  <%= f.input :email, label: false, :placeholder => "Email" %>
 
-  <%= f.input :password, autocomplete: "off", label: "Senha :" %>  
-  <%= f.input :password_confirmation, autocomplete: "off", label: "Confirmar senha :" %>
+  <%= f.input :password, autocomplete: "off", label: false, :placeholder => "Senha" %>  
+
 
   <% if @validatable %>
   <em>(<%= @minimum_password_length %> characters minimum)</em>
-  <% end %> </br >
-</br >
+  <% end %>
+
 <div class="boto">
-  <%= f.button :submit, "Criar conta", :class => "btn btn-success btn-block" %>
+  <%= f.button :submit, "Criar conta", :class => "btn btn-success btn-lg btn-block" %>
   </fieldset>
 <% end %>
-<h5>ou <%= render "devise/shared/links" %></h5>
+<h5 id="entrar2"><strong>Já possui uma conta ? <%= render "devise/shared/links" %></strong></h5>
 </div>
 </div>

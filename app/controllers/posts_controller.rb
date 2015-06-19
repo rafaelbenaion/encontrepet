@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
   
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :index]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   
 
   # GET /posts
   # GET /posts.json
   def index
-  @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
-  @conversations = Conversation.involving(current_user).order("created_at DESC")
+  if user_signed_in?
+    @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+    @conversations = Conversation.involving(current_user).order("created_at DESC")
+  end
   # @posts = Post.order('created_at desc').all 
   @posts = Post.where(nil) # creates an anonymous scope
   filtering_params(params).each do |key, value|

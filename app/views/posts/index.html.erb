@@ -1,13 +1,13 @@
 <!-- Button trigger modal -->
 
-
+<% if user_signed_in? %>
 <!-- Modal -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="myModalLabel">Mensagens <%= link_to "Atualizar", adotar_path, :method => :get, class: "btn btn-success btn-xs start-conversation" %></h3>
+        <h3 class="modal-title" id="myModalLabel"><i class="fa fa-comments"></i> Mensagens <%= link_to "Atualizar", adotar_path, :method => :get, class: "btn btn-success btn-xs start-conversation" %></h3>
       </div>
       <div class="modal-body">
         
@@ -27,7 +27,7 @@
             <% end %>
           </ul>
       <% else %>
-          <p>Nenhuma conversa encontrada.</p>
+          <p>Nenhuma mensagem encontrada.</p>
       <% end %>
 
       </div>
@@ -35,7 +35,7 @@
   </div>
 </div>
 
-       
+<% end %>
       
 </div>
 
@@ -60,7 +60,7 @@
 <div id="mostrarfiltro">
 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
   Filtrar animais
-</a><strong>Clique para selecionar as opções de filtros.</strong>
+</a><strong>Clique para selecionar opções de filtros.</strong>
 </div>
 
 <div class="collapse" id="collapseExample">
@@ -75,7 +75,9 @@
 <%= f.input :vacinado, input_html: { name: 'vacinado', :value => params[:vacinado] }, label: ('Vacinado:  '), :required => false, :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
 <%= f.input :tamanho, input_html: { name: 'tamanho', :value => params[:tamanho] }, label: ('Tamanho:  '), :required => false, :as => :select, :collection => [['Pequeno', :Pequeno], ['Médio', :Médio], ['Grande', :Grande]]  %>
 
-<%= f.button :submit, ('> Filtrar') %>
+<button type="submit" class="btn btn-success">
+  <i class="fa fa-filter"></i> Filtrar
+</button>
 </div>
 </div>
 <%end %>
@@ -108,9 +110,14 @@
       <legend id="riscocompadd"></legend>
       <p><%= post.about %></p>
       <div id="adotar_botao">
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-success" %>  
-        <a href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-primary start-conversation"><i class="fa fa-comments"></i></a></h5>
-       
+
+      <% if user_signed_in? %>
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
+        <a href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
+      <% else %>
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
+        <button class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></button></h5>
+      <% end %>
 
 
       </div> 
@@ -127,10 +134,26 @@
  
 </div>
 
+<% if @posts.count == 0 %>
+  <h4 id="entrar2"><strong>Nenhum animal encontrado.</strong></h4>
+<% end %>
+
 </div>
 
-<% if @posts.count == 0 %>
-<div id="animal">
-      <h4><strong>Nenhum animal encontrado.</strong></h4>
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Aviso !</h4>
+      </div>
+      <div class="modal-body">
+        <h4>Você precisa primeiro se <%= link_to "Cadastrar", cadastrar_path%> ou <%= link_to "Logar", entrar_path%> para usar o Chat.</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>
+
