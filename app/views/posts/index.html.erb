@@ -15,7 +15,7 @@
           <ul class="media-list">
             <% @conversations.each do |conversation| %>
                 <li class="media">
-                  <%= image_tag("http://placehold.it/50x50", class: "media-object pull-left") %>
+                  <%= image_tag("/placeholder.png", class: "media-object pull-left") %>
                   <div class="media-body">
                     <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id, "data-toggle" => "modal", "data-target" => "#myModal2" %>
                         <h4 class="media-heading"><%= conversation_interlocutor(conversation).name %></h4>
@@ -41,7 +41,7 @@
 
 <div class="jumbotron" id="salve">
   <div class="texto">
-          <img src="/petbook23.png">
+          <img src="/encontrepet.png">
   <h1><strong>Salve uma vida.</strong></h1>
   <h4>Ache agora uma família para um animal abandonado que precise de ajuda.
 <div class="bot">
