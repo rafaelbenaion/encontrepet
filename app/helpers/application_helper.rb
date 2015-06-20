@@ -13,19 +13,12 @@ module ApplicationHelper
 
 	def post_foto (post)
 		html = ""
-		if post.documentet && post.documentet.attachmentet?
-			html << link_to(@post.documentet.attachmentet_file_name, @post.documentet.attachmentet.url)
+		if post.image 
+			html << link_to(@post.image_file_name, @post.image.url)
 			return html.html_safe
 		end
 	end
 
-	def post_foto_link (post)
-		html = ""
-		if post.documentet && post.documentet.attachmentet?
-			html << post.documentet.attachmentet.url
-			return html.html_safe
-		end
-	end
 
 
 

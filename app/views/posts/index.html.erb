@@ -100,8 +100,8 @@
     <div class="thumbnail" id="animal">
       <h2><%= post.name %>, <%= post.age %></h2>
       
-      <% if post.documentet && post.documentet.attachmentet? %>
-      <%= image_tag post.documentet.attachmentet.url(:thumb), :alt => "erroimage.jpg" %>
+      <% if post.image %>
+      <%= image_tag post.image.url(:thumb) %>
       <% end %>
 
       <legend></legend>

@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   # @posts = Post.order('created_at desc').all 
   @posts = Post.where(nil).order("created_at DESC") # creates an anonymous scope
   filtering_params(params).each do |key, value|
-    @posts = @posts.public_send(key, value) if value.present?
+  @posts = @posts.public_send(key, value) if value.present?
   end
 end
 
@@ -32,12 +32,11 @@ end
   def new
     @post = current_user.posts.new
     
-    @post.build_documentet
+    #@post.build_documentet
   end
 
   # GET /posts/1/edit
   def edit
-    @post.build_documentet
   end
 
   # POST /posts
@@ -55,13 +54,11 @@ end
   # PATCH/PUT /posts/1.json
   def update
     @post = current_user.posts.find(params[:id])
-    @documentet = @post.documentet
     if params[:post] && params[:post].has_key?(:user_id)
       params[:post].delete(:user_id)
     end 
     respond_to do |format|
-      if @post.update(post_params) &&
-        @documentet && @documentet.update(post_params[:documentet_attributes])
+      if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Doação editada com sucesso.' }
         format.json { render :show, status: :ok, location: @post }
       else
@@ -74,10 +71,6 @@ end
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @documentet = @post.documentet
-    @documentet.attachmentet = nil
-    @documentet.save
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url, notice: 'Doação deletada com sucesso.'
   end
@@ -90,6 +83,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:search_query, :sorted_by, :with_country_id, :with_created_at_gte, :celular, :telefone, :castrado, :vacinado, :cidade, :user_id, :name, :age, :animal, :gender, :size, :about, documentet_attributes: [:attachmentet, :documentet, :attachmentet_file_name, :documentet_fields, :build_documentet, :remove_attachmentet]) if params[:post]
+      params.require(:post).permit(:image, :search_query, :sorted_by, :with_country_id, :with_created_at_gte, :celular, :telefone, :castrado, :vacinado, :cidade, :user_id, :name, :age, :animal, :gender, :size, :about, :image_file_name, :image_fields, :build_image, :remove_image)
     end
 end

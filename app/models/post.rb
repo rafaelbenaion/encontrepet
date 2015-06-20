@@ -1,11 +1,14 @@
 class Post < ActiveRecord::Base
 	
-    belongs_to :documentet
-    accepts_nested_attributes_for :documentet
+    #belongs_to :documentet
+    #accepts_nested_attributes_for :documentet
     belongs_to :user 
 
+  has_attached_file :image, :styles => {:thumb => "242x200#"}
+  validates_attachment_content_type :image, content_type: %w(image/jpeg image/jpg image/png)
 
-	validates :name, presence: true
+
+	  validates :name, presence: true
     validates :age, presence: true
     validates :animal, presence: true
     validates :gender, presence: true
@@ -16,7 +19,7 @@ class Post < ActiveRecord::Base
     validates :vacinado, presence: true
     validates :cidade, presence: true
     validates :telefone, presence: true
-    
+
       scope :animal, -> (animal) { where("animal like ?", "#{animal}%")}
       scope :gender, -> (gender) { where("gender like ?", "#{gender}%")}
       scope :starts_with, -> (name) { where("LOWER(name) like ?", "#{name.downcase}%")}
