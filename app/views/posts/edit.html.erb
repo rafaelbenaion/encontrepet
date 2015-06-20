@@ -1,9 +1,62 @@
 
-<div class="jumbotron" id="ficarmenor2">
-<h2>Editar Publicação</h2>
-</div>
 
-<%= render 'form' %>
+
+
+<div class="jumbotron" id="ficarmenor2">	
+<%= simple_form_for(@post, html: {multipart: true}) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+   
+    </div>
+  <% end %>
+
+<h3 id="entrar2">Editar Publicação</h3>
+</br >
+
+<%= f.input :name, label: "Nome do animal:" %>
+
+<%= f.input :age, label: "Idade :", placeholder: 'Exemplo: 5 meses'  %>
+
+<%= f.input :animal, label: "Animal :", :as => :select, :collection => [['Cachorro', :Cachorro], ['Gato', :Gato], ['Outro', :Outro]]  %>
+
+<%= f.input :gender, :as => :select, :collection => [['Macho', :Macho], ['Fêmea', :Fêmea]], label: "Gênero :" %>
+
+<%= f.input :size, label: "Tamanho :", :as => :select, :collection => [['Pequeno', :Pequeno], ['Médio', :Médio], ['Grande', :Grande]]  %>
+
+<%= f.input :castrado, label: "Castrado :", :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
+
+<%= f.input :vacinado, label: "Vacinado :", :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
+
+<%= f.input :about,label: "Descrição :", input_html: { rows: 4, class: 'input-xxlarge'}, placeholder: 'Escreva informações sobre o animal como cor, seu comportamento, onde foi encontrado e se foi desverminado.'  %>
+<strong>Foto:</strong>
+<%= image_tag @post.image.url(:thumb), :id => "foto_ficha" %>
+<a class="btn btn-warning btn-xs btn-block" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Clique para alterar a foto</a>
+</br >
+<div class="collapse" id="collapseExample">
+<div class="well">
+<%= f.input :image, as: :file, label: "Foto do animal :" %>
+</div>
+</div>
+</br >
+
+
+<legend></legend>
+<h3 id="entrar2">Informações do doador</h3>
+</br >
+
+<%= f.input :cidade, label: "Cidade :", placeholder: 'Cidade e Estado'  %>
+
+<%= f.input :telefone, label: "Telefone :", placeholder: '(XX) XXXX-XXXX'  %>
+
+<%= f.input :celular, label: "Celular :", placeholder: '(XX) XXXX-XXXX'  %>
+
+<button type="submit" class="btn btn-success btn-lg btn-block">Salvar edição</button>
+<%= link_to 'Cancelar', posts_path, :class => "btn btn-danger btn-block", data: { confirm: 'Você tem certeza ?' } %>
+
+
+</div>
+<% end %>
+
 
  
 </fieldset>

@@ -6,7 +6,8 @@
     </div>
   <% end %>
 
-<legend><h4>Ficha do Animal</h4></legend>
+<h3 id="entrar2">Ficha do animal</h3>
+</br >
 
 <%= f.input :name, label: "Nome do animal:" %>
 
@@ -24,14 +25,15 @@
 
 <%= f.input :about,label: "Descrição :", input_html: { rows: 4, class: 'input-xxlarge'}, placeholder: 'Escreva informações sobre o animal como cor, seu comportamento, onde foi encontrado e se foi desverminado.'  %>
 
-<%= f.input :image, as: :file %>
+<div class="well">
+<%= f.input :image, as: :file, label: "Foto do animal :" %>
+</div>
 
-<div class="control-group">
-		<h4><span class="label label-danger">Envie a foto!</span></h4>
-	</div>
+</div>
+
+<div class="jumbotron" id="ficarmenor2">
+<h3 id="entrar2">Informações do doador</h3>
 </br >
-
-<legend><h4>Informações do Doador</h4></legend>
 
 <%= f.input :cidade, label: "Cidade :", placeholder: 'Cidade e Estado'  %>
 
@@ -39,7 +41,7 @@
 
 <%= f.input :celular, label: "Celular :", placeholder: '(XX) XXXX-XXXX'  %>
 
-<button type="submit" class="btn btn-success btn-lg btn-block">Enviar publicação</button>
+<button type="submit" class="btn btn-success btn-lg btn-block">Publicar</button>
 <%= link_to 'Cancelar', posts_path, :class => "btn btn-danger btn-block", data: { confirm: 'Você tem certeza ?' } %>
 
 

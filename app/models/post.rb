@@ -19,6 +19,8 @@ class Post < ActiveRecord::Base
     validates :vacinado, presence: true
     validates :cidade, presence: true
     validates :telefone, presence: true
+    validates :image, :attachment_presence => true
+
 
       scope :animal, -> (animal) { where("animal like ?", "#{animal}%")}
       scope :gender, -> (gender) { where("gender like ?", "#{gender}%")}
