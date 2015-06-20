@@ -37,22 +37,18 @@ end
 
   # GET /posts/1/edit
   def edit
+    @post.build_documentet
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = current_user.posts.new(post_params)
-
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Doação criada com sucesso.'}
-        format.json { render :show, status: :created, location: @post }
+        redirect_to @post, notice: 'Doação criada com sucesso.'
       else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /posts/1
@@ -78,11 +74,12 @@ end
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @documentet = @post.documentet
+    @documentet.attachmentet = nil
+    @documentet.save
+    @post = Post.find(params[:id])
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Doação deletada com sucesso.' }
-      format.json { head :no_content }
-    end
+    redirect_to posts_url, notice: 'Doação deletada com sucesso.'
   end
 
   private

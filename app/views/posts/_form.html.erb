@@ -25,16 +25,12 @@
 <%= f.input :about,label: "Descrição :", input_html: { rows: 4, class: 'input-xxlarge'}, placeholder: 'Escreva informações sobre o animal como cor, seu comportamento, onde foi encontrado e se foi desverminado.'  %>
 
 <%= f.fields_for :documentet do |documentet_fields| %>
-	
 <%= documentet_fields.input :attachmentet, as: :file, label: "Foto do Animal:" %>
-	
-	<% if documentet_fields.object.attachmentet? %>
-	<div class="control-group">
-		<h4><span class="label label-danger">Envie a foto novamente !</span></h4>
-	</div>
-	<% end %>
-
 <% end %>
+
+<div class="control-group">
+		<h4><span class="label label-danger">Envie a foto!</span></h4>
+	</div>
 </br >
 
 <legend><h4>Informações do Doador</h4></legend>

@@ -63,10 +63,25 @@
           </ul>
             <ul class="nav navbar-nav navbar-right">
              <% if user_signed_in? %>
-             <span data-toggle="tooltip" title="Suas mensagens." data-placement="bottom">
-             <button type="button" class="btn btn-primary sharp" data-toggle="modal" data-target="#myModal2">
-             <i class="fa fa-comments fa-lg"></i>
-             </button>
+                  <% if request.env['PATH_INFO'] == adotar_path %>
+                    <button type="button" class="btn btn-primary sharp" data-toggle="modal" data-target="#myModal2">
+                    <i class="fa fa-comments fa-lg"></i>
+                    </button>
+                  <% elsif request.env['PATH_INFO'] == posts_path %>
+                    <button type="button" class="btn btn-primary sharp" data-toggle="modal" data-target="#myModal2">
+                    <i class="fa fa-comments fa-lg"></i>
+                    </button> 
+                  <% elsif request.env['PATH_INFO'] == "/" %>
+                    <button type="button" class="btn btn-primary sharp" data-toggle="modal" data-target="#myModal2">
+                    <i class="fa fa-comments fa-lg"></i>
+                    </button> 
+                  <% else %>
+                    <button type="button" class="btn btn-primary sharp" onclick="location.href='<%= adotar_path %>';">
+                    <i class="fa fa-comments fa-lg"></i>
+                    </button> 
+                  <% end %>
+
+             
            </span>
              <button class="btn btn-info navbar-btn" onclick="location.href='<%= id_path(current_user.profile_name) %>';"><i class="fa fa-paw"></i> Meus animais</button>
                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

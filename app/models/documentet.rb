@@ -1,6 +1,7 @@
 class Documentet < ActiveRecord::Base
   has_attached_file :attachmentet, :styles => { 
-  	:thumb => "242x200#" }, :default_url => "/images/:style/missing.png"
+  	:thumb => "242x200#" }
+
   validates_presence_of :attachmentet, :message => "can't be empty"
   validates_attachment_content_type :attachmentet, :content_type => %w(image/jpeg image/jpg image/png)
 
@@ -10,7 +11,7 @@ class Documentet < ActiveRecord::Base
 
   before_save :perform_attachmentet_removal
   def perform_attachmentet_removal
-  	if remove_attachmentet == '1' && !attachmentet.dirty?
+  	if remove_attachmentet == '1'
   		self.attachmentet = nil
   	end
   end
