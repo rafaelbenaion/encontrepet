@@ -20,9 +20,8 @@
 
     <div class="col-sm-6 col-md-4">
       <div class="jumbotron" id="quebragalho">
-      <% if post.documentet && post.documentet.attachmentet? %>
-      <%= image_tag post.documentet.attachmentet.url(:thumb), :class => "fotoperfil" %>
-      
+      <% if post.image %>
+      <%= image_tag post.image.url(:thumb), :class => "fotoperfil" %>
       <% end %>
       
       <h2><%= link_to post.name, post, :id => "nomeanimal" %></h2>
