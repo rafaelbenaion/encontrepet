@@ -5,6 +5,6 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://localhost:9292/faye"
+  server: "http://encontrepet.com:9292/faye"
   secret_token: "a07da1373eebb55f628d93ea9aa0309ec7d523bb588c9274f2b4bfc6151820f1"
   signature_expiration: 86400 # one hour
