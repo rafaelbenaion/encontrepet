@@ -19,6 +19,13 @@ module ApplicationHelper
 		end
 	end
 
+		def lost_foto (lost)
+		html = ""
+		if lost.photo 
+			html << link_to(@lost.photo_file_name, @lost.photo.url)
+			return html.html_safe
+		end
+	end
 
 
 

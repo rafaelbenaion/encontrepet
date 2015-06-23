@@ -4925,8 +4925,10 @@ a.thumbnail.active {
 .alert {
   padding: 15px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border: 0px;
+  border-radius: 0px;
+  text-align: center;
+ 
 }
 .alert h4 {
   margin-top: 0;
@@ -4951,15 +4953,14 @@ a.thumbnail.active {
   position: relative;
   top: -2px;
   right: -21px;
-  color: inherit;
+  color: #666;
 }
 .alert-success {
-  color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+  color: #fff;
+  background-color: #15CD72;
 }
 .alert-success hr {
-  border-top-color: #c9e2b3;
+  border-top-color: #15CD72;
 }
 .alert-success .alert-link {
   color: #2b542c;
@@ -4976,9 +4977,9 @@ a.thumbnail.active {
   color: #245269;
 }
 .alert-warning {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
+  color: #666;
+  background-color: #FFAD33;
+
 }
 .alert-warning hr {
   border-top-color: #f7e1b5;
@@ -4987,9 +4988,8 @@ a.thumbnail.active {
   color: #66512c;
 }
 .alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+  color: #FFF;
+  background-color:  #FF3333;
 }
 .alert-danger hr {
   border-top-color: #e4b9c0;
@@ -5698,10 +5698,10 @@ a.list-group-item-danger.active:focus {
   font-size: 21px;
   font-weight: bold;
   line-height: 1;
-  color: #000;
+  color: #666;
   text-shadow: 0 1px 0 #fff;
   filter: alpha(opacity=20);
-  opacity: .2;
+  opacity: .4;
 }
 .close:hover,
 .close:focus {

@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   
+
+  resources :posts
+
+
   devise_for :users
+
+  resources :losts do
+    resources :conversations
+    resources :comments
+  end
+
 
   
   devise_scope :user do 
@@ -27,10 +37,9 @@ Rails.application.routes.draw do
 
   get "posts", to: 'posts#index'
 
-  get '/:id', to: 'profiles#show', as: :id
-
-
-  resources :posts
+  get '/:id', to: 'profiles#show', as: :id do
+    resources :conversations
+  end
 
   resources :conversations do
     resources :messages

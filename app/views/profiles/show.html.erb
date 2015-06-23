@@ -2,19 +2,24 @@
 <div class="jumbotron" id="ficarmenor3">
   
 	<fieldset>
-		<legend id="riscosempadd"><h2><%= @user.name %></h2></legend>
+		<legend id="riscosempadd"><h2><%= @user.name %></h2><a href="" data-sid="<%= current_user.id %>", data-rip="<%= @user.id %>" class="btn btn-primary start-conversation"><i class="fa fa-comments"></i>Chat</a></legend>
+    
     <h5>Perfil com todos os animais e contatos de <strong><%= @user.name%></strong>.</h5>
     <h5><strong>Email: </strong><%= @user.email %></h5>
     <% if user_signed_in? %>
         <% if current_user.profile_name.to_str == @user.profile_name.to_str %>
         <%= link_to 'Fazer uma nova doação', new_post_path, :class => "btn btn-primary" %>
-        <% end %>
+        
     <% end %>
-
+        <% end %>
 	</fieldset>
 </div>
+
+
 <div class="row">
-    
+  
+
+
 <% if @posts %>
 	<% @posts.each do |post| %>
 

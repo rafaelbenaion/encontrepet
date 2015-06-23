@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
     #belongs_to :documentet
     #accepts_nested_attributes_for :documentet
     belongs_to :user 
+   
 
   has_attached_file :image, :styles => {:thumb => "242x200#"}
   validates_attachment_content_type :image, content_type: %w(image/jpeg image/jpg image/png)

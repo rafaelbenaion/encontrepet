@@ -18,24 +18,16 @@ class User < ActiveRecord::Base
   						   }
 
 
-
+ has_many :losts
+ has_many :comments
  has_many :posts
+
  has_many :conversations, :foreign_key => :sender_id
+
 
  def name
  	first_name + " " + last_name
  end
-
-  after_create :create_default_conversation
-
-
-  private
-
-  # for demo purposes
-
-  def create_default_conversation
-    Conversation.create(sender_id: 1, recipient_id: self.id) unless self.id == 1
-  end
 
 
 end

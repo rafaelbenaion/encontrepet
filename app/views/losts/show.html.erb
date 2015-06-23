@@ -1,0 +1,129 @@
+<div class="row">
+<div class="col-md-6">
+<div class="jumbotron" id="ficarmenor2">
+<h2 id="entrar2"><%= @lost.name %></h2>
+ </br >
+  <% if @lost.photo %>
+      <%= image_tag @lost.photo.url(:thumb), :id => "foto_ficha" %>
+  <% end %> 
+</br >
+
+<legend>
+<h5>
+  <strong>Dono:</strong>
+  <%= link_to @lost.user.name, id_path(@lost.user.profile_name) %>
+</h5>
+</legend>
+
+<legend>  
+<h5>
+  <strong>Local:</strong>
+  <%= @lost.bairro %> - <%= @lost.city %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Data do desaparecimento:</strong>
+  <%= @lost.date %>
+</h5>
+</legend>
+
+<legend>  
+<h5>
+  <strong>Animal:</strong>
+  <%= @lost.animal %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Gênero:</strong>
+  <%= @lost.gender %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Idade:</strong>
+  <%= @lost.size %>
+</h5>
+</legend>
+
+<legend>
+<h5>
+  <strong>Informações:</strong>
+  <%= @lost.about %>
+</h5>
+</legend>
+
+ <legend>
+<h5>
+<strong>Foto:</strong>
+ <%= lost_foto @lost %>
+</h5>
+</legend>
+
+<div id="botaofinal">
+<button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#myModal">Contatos</button>
+<%= link_to 'Voltar', losts_path, :class => "btn btn-default btn-block" %>
+     
+      <% if user_signed_in? %>
+        <div class="footer">
+          <span class="admin">
+          <% if current_user.profile_name.to_str == @lost.user.profile_name.to_str %>
+            <h6><%= link_to ' Editar', edit_lost_path(@lost), :class => "btn btn-xs btn-primary" %>  <%= link_to ' Apagar', @lost, method: :delete, data: { confirm: 'Você tem certeza de que quer apagar? Não tem como desfazer depois!' }, :class => "btn btn-xs btn-danger" %></h6>
+          <% else %>
+          <% end %>
+          </span>
+        </div> 
+      <% else %>
+      <% end %>
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Contatos dono(a) de, <strong><%=  @lost.name %></strong> :</h4>
+      </div>
+      <div class="modal-body">
+      <h5><strong>Telefone:</strong> <a href="tel:<%= @lost.phone %>"><%= @lost.phone %></a></h5>
+      <h5><strong>Celular:</strong> <a href="tel:<%= @lost.another_phone %>"><%= @lost.another_phone %></a></h5>
+      <h5><strong>E-mail:</strong> <a href="mailto:<%= @lost.user.email %>"><%= @lost.user.email %></a></h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<div class="col-md-6">
+  <div class="jumbotron" id="ficarmenor4">
+            
+<h5 id="entrar3"><i class="fa fa-comments"></i> Comentários <%= @lost.comments.count %></h5>
+
+<legend></legend>
+<% @lost.comments.each do |comment| %>
+
+
+<h5><strong><%= comment.user.first_name %>:</strong> <%= comment.comment %></h5><%= comment.created_at %> | <%= link_to "Apagar Comentário",[comment.lost, comment], method: :delete, data: {confirm: "Você tem certeza ?"}%>
+
+<legend></legend>
+
+<% end %>
+
+<%= simple_form_for([@lost, @lost.comments.build]) do |f| %>
+<%= f.input :comment %>
+<%= f.submit %>
+<% end %>
+
+
+</div>
+</div>
+</div>

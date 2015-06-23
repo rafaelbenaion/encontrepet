@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620210249) do
+ActiveRecord::Schema.define(version: 20150623051635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "lost_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["lost_id"], name: "index_comments_on_lost_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -25,6 +36,28 @@ ActiveRecord::Schema.define(version: 20150620210249) do
 
   add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
   add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
+
+  create_table "losts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "animal"
+    t.string   "gender"
+    t.string   "size"
+    t.text     "about"
+    t.string   "city"
+    t.string   "bairro"
+    t.string   "date"
+    t.string   "phone"
+    t.string   "another_phone"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "losts", ["user_id"], name: "index_losts_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
@@ -81,6 +114,8 @@ ActiveRecord::Schema.define(version: 20150620210249) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "losts"
+  add_foreign_key "comments", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
 end

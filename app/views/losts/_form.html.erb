@@ -1,0 +1,25 @@
+<div class="jumbotron" id="ficarmenor2">
+<%= simple_form_for(@lost, html: {multipart: true}) do |f| %>
+  <h3 id="entrar2">Informações do animal</h3>
+</br >
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :animal %>
+    <%= f.input :gender %>
+    <%= f.input :size %>
+    <%= f.input :about %>
+    <div class="well">
+<%= f.input :photo, as: :file, label: "Foto do animal :" %>
+</div>
+    <%= f.input :city %>
+    <%= f.input :bairro %>
+    <%= f.input :date %>
+    <%= f.input :phone %>
+    <%= f.input :another_phone %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

@@ -1,13 +1,12 @@
 
 <div class="jumbotron" id="ficarmenor2">
-<legend><h2><%= @post.name %>, <%= @post.age %></h2></legend>
-
+<h2 id="entrar2"><%= @post.name %>, <%= @post.age %></h2>
+ </br >
 
   <% if @post.image %>
       <%= image_tag @post.image.url(:thumb), :id => "foto_ficha" %>
       <% end %> 
-<legend></legend>
-
+ </br >
 <legend>
 <h5>
   <strong>Dono:</strong>
@@ -81,6 +80,7 @@
 
 <div id="botaofinal">
 <button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#myModal">Contatos</button>
+<a href="" data-sid="<%= current_user.id %>", data-rip="<%= @post.user.id %>" class="btn btn-primary btn-block btn-lg start-conversation"><i class="fa fa-comments"></i></a>
 <%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block" %>
      
       <% if user_signed_in? %>

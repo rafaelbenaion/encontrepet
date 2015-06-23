@@ -104,11 +104,10 @@
       <%= image_tag post.image.url(:thumb) %>
       <% end %>
 
-      <legend></legend>
+      </br>
       
-      <h4><%= post.animal %> | <%= post.gender %> | Porte <%= post.size %></h4>
-      <legend id="riscocompadd"></legend>
-      <p><%= post.about %></p>
+      <h4><%= post.animal %>  <%= post.gender %> | Porte <%= post.size %></h4>
+
       <div id="adotar_botao">
 
       <% if user_signed_in? %>

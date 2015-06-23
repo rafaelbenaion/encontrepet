@@ -1,0 +1,31 @@
+<div class="container" id="cards">
+<div class="row">
+
+ 
+<% @losts.each do |lost| %>
+   <div class="col-sm-6 col-md-4">
+
+    <div class="thumbnail" id="animal">
+      <h2 id="entrar2"><%= lost.name %></h2>
+      
+      <% if lost.photo %>
+      <%= image_tag lost.photo.url(:thumb) %>
+      <% end %>
+
+      </br>
+      <div id="adotar_botao">
+
+      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %><a href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
+
+
+      </div> 
+
+ 
+
+</div>
+ </div>
+    <% end %>
+</div>
+</div>
+
+<%= link_to 'New Lost', new_lost_path %>
