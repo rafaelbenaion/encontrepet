@@ -5,6 +5,11 @@ class LostsController < ApplicationController
   # GET /losts
   # GET /losts.json
   def index
+    if user_signed_in?
+    @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
+    @conversations = Conversation.involving(current_user)
+    end
+    
     @losts = Lost.all
   end
 

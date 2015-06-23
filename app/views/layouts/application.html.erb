@@ -53,7 +53,7 @@
               <%= simple_form_for :post, :method => 'get', :url => "/", :html => {:class => 'input-group'} do |f| %>
               <%= f.input :starts_with, input_html: { name: 'starts_with', :value => params[:starts_with], :id => 'treta'}, label: false, :required => false, :placeholder => "Pesquisar um animal pelo nome"%>
                <span class="input-group-btn">
-               <button type="submit" class="btn btn-success sharp form-inline" id="procurar">
+               <button type="submit" class="btn btn-primary sharp form-inline" id="procurar">
                 <i class="fa fa-search"></i>
             </button>
              </span>
@@ -75,6 +75,10 @@
                     <button type="button" class="btn btn-primary sharp" data-toggle="modal" data-target="#myModal2">
                     <i class="fa fa-comments fa-lg"></i>
                     </button> 
+                  <% elsif request.env['PATH_INFO'] == losts_path %>
+                    <button type="button" class="btn btn-primary sharp" data-toggle="modal" data-target="#myModal2">
+                    <i class="fa fa-comments fa-lg"></i>
+                    </button> 
                   <% else %>
                     <button type="button" class="btn btn-primary sharp" onclick="location.href='<%= adotar_path %>';">
                     <i class="fa fa-comments fa-lg"></i>
@@ -83,7 +87,7 @@
 
              
            </span>
-             <button class="btn btn-info navbar-btn" onclick="location.href='<%= id_path(current_user.profile_name) %>';"><i class="fa fa-paw"></i> Meus animais</button>
+             <button class="btn btn-info navbar-btn" onclick="location.href='<%= id_path(current_user.profile_name) %>';">Meus animais <span class="badge"><%= current_user.posts.count %></span></button>
                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-cog fa-lg"></i>
                </button>

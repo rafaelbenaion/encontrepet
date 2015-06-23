@@ -1,3 +1,40 @@
+<% if user_signed_in? %>
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel"><i class="fa fa-comments"></i> Mensagens <%= link_to "Atualizar", adotar_path, :method => :get, class: "btn btn-success btn-xs start-conversation" %></h3>
+      </div>
+      <div class="modal-body">
+        
+        <% if @conversations.any? %>
+          <ul class="media-list">
+            <% @conversations.each do |conversation| %>
+                <li class="media">
+                  <%= image_tag("/placeholder.png", class: "media-object pull-left") %>
+                  <div class="media-body">
+                    <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id, "data-toggle" => "modal", "data-target" => "#myModal2" %>
+                        <h4 class="media-heading"><%= conversation_interlocutor(conversation).name %></h4>
+                        <p>> <%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
+                  </div>
+                  <legend></legend>
+                </li>
+
+            <% end %>
+          </ul>
+      <% else %>
+          <p>Nenhuma mensagem encontrada.</p>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
 <div class="container" id="cards">
 <div class="row">
 
@@ -15,7 +52,11 @@
       </br>
       <div id="adotar_botao">
 
-      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %><a href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
+      <% if user_signed_in? %>
+        <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %><a href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
+      <% else %>
+        <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %><button class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></button></h5>
+      <% end %>
 
 
       </div> 
@@ -29,3 +70,20 @@
 </div>
 
 <%= link_to 'New Lost', new_lost_path %>
+
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Bem vindo!</h4>
+      </div>
+      <div class="modal-body">
+        <h4>Você precisa primeiro se <%= link_to "Cadastrar", cadastrar_path%> ou <%= link_to "Logar", entrar_path%> para usar o Chat.</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

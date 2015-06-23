@@ -2,16 +2,19 @@
 <div class="jumbotron" id="ficarmenor3">
   
 	<fieldset>
-		<legend id="riscosempadd"><h2><%= @user.name %></h2><a href="" data-sid="<%= current_user.id %>", data-rip="<%= @user.id %>" class="btn btn-primary start-conversation"><i class="fa fa-comments"></i>Chat</a></legend>
+		<legend id="riscosempadd"><h2><%= @user.name %></h2></legend>
     
     <h5>Perfil com todos os animais e contatos de <strong><%= @user.name%></strong>.</h5>
     <h5><strong>Email: </strong><%= @user.email %></h5>
     <% if user_signed_in? %>
         <% if current_user.profile_name.to_str == @user.profile_name.to_str %>
         <%= link_to 'Fazer uma nova doação', new_post_path, :class => "btn btn-primary" %>
-        
-    <% end %>
+        <% else %>
+        <a href="" data-sid="<%= current_user.id %>", data-rip="<%= @user.id %>" class="btn btn-primary start-conversation"><i class="fa fa-comments"></i> Chat</a>
         <% end %>
+    <% else %>
+        <button class="btn btn-primary start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i> Chat</button>
+    <% end %>
 	</fieldset>
 </div>
 
@@ -55,6 +58,19 @@
     </div>
 <% end %>
  
-
-
-   
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Bem vindo!</h4>
+      </div>
+      <div class="modal-body">
+        <h4>Você precisa primeiro se <%= link_to "Cadastrar", cadastrar_path%> ou <%= link_to "Logar", entrar_path%> para usar o Chat.</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
