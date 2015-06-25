@@ -36,25 +36,58 @@
 </div>
 
 <% end %>
-      
+
+
+
 </div>
 
 <div class="jumbotron" id="salve">
+
+
   <div class="texto">
-          <img src="/encontrepet.png">
-  <h1><strong>Salve uma vida.</strong></h1>
-  <h4>Ache agora uma família para um animal abandonado que precise de ajuda.
-<div class="bot">
-<h5> </h5>
-  <% if user_signed_in? %>
-        <%= link_to 'Fazer uma doação', new_post_path, :class => "btn btn-primary btn-lg" %>
-        <% else %>
-        <%= link_to 'Cadastre-se agora mesmo', cadastrar_path, :class => "btn btn-success btn-lg" %>
-  <% end %>
-  
-</div>
+
+<div class="bs-example">
+    <div class="row" id="papara">
+      <div class="col-xs-6 col-md-3" id="sepa">
+          <button class="thumbnail-primary">
+          <h2 id="numeral"><strong>1</strong></h2>
+          <img src="/segundo2.png">
+          <h4><strong id="entrar5">Resgate</strong></h4>
+          <h5 id="entrar4">Salve um animal que esteja abandonado.</h5>
+          </button>
+      </div>
+      <div class="col-xs-6 col-md-3" id="sepa">
+          <button class="thumbnail-primary" onclick="location.href='<%= cadastrar_path %>';">
+            <h2 id="numeral"><strong>2</strong></h2>
+          <img src="/segundo2.png">
+          <h4><strong id="entrar5">Cadastre-se</strong></h4>
+          <h5 id="entrar4">Faça seu cadastro, é simples, rápido e seguro.</h5>
+          </button>
+      </div>
+      <div class="col-xs-6 col-md-3" id="sepa" onclick="location.href='<%= new_post_path %>';">
+          <button class="thumbnail-primary">
+            <h2 id="numeral"><strong>3</strong></h2>
+          <img src="/terceiro2.png" >
+          <h4><strong id="entrar5">Crie um post</strong></h4>
+          <h5 id="entrar4">Envie uma foto do animal e preencha a sua ficha.</h5>
+          </button>
+      </div>
+      <div class="col-xs-6 col-md-3" id="sepa">
+          <button class="thumbnail-primary">
+            <h2 id="numeral"><strong>4</strong></h2>
+          <img src="/segundo2.png">
+          <h4><strong id="entrar5">Final feliz</strong></h4>
+          <h5 id="entrar4">Aguarde e seu amigo vai arranjar uma nova família.</h5>
+          </button>
+      </div>
+
+    </div>
+  </div>
+
+
 </div>
   </div>
+
 
 
 <div id="mostrarfiltro">
@@ -155,4 +188,3 @@
     </div>
   </div>
 </div>
-
