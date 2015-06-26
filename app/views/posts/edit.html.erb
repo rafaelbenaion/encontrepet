@@ -50,8 +50,17 @@
 
 <%= f.input :celular, label: "Celular :", placeholder: '(XX) XXXX-XXXX'  %>
 
-<button type="submit" class="btn btn-success btn-lg btn-block">Salvar edição</button>
-<%= link_to 'Cancelar', posts_path, :class => "btn btn-danger btn-block", data: { confirm: 'Você tem certeza ?' } %>
+  <script>
+  $(document).ready(function(){
+  $('#button').button();
+
+  $('#button').click(function() {
+    $(this).button('loading');
+  });  
+});
+</script>
+<button type="submit" class="btn btn-success btn-lg btn-block" id="button" data-loading-text="Enviando..." autocomplete="off">Salvar edição</button>
+<%= link_to 'Cancelar', posts_path, :class => "btn btn-default btn-block", data: { confirm: 'Você tem certeza ?' } %>
 
 
 </div>

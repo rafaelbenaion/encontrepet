@@ -35,6 +35,17 @@
 
 <% end %>
 
+
+</div>
+
+<div id="menucima">
+<h4 id="entrar5"><strong><a type="button" data-toggle="button" onclick="location.href='<%= adotar_path %>';" class="btn btn-primary top" aria-pressed="false" autocomplete="off">ADOTAR</a></strong> <strong><a href="<%= losts_path %>" class="btn btn-primary top active">PERDIDOS</a></strong></h4>
+</div>
+
+<div class="jumbotron" id="salve">
+<img src="/encontrepet.png">
+</div>
+
 <div class="container" id="cards">
 <div class="row">
 
@@ -53,9 +64,11 @@
       <div id="adotar_botao">
 
       <% if user_signed_in? %>
-        <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %><a href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
+      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
+        <a href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
       <% else %>
-        <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %><button class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></button></h5>
+      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
+        <button class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></button></h5>
       <% end %>
 
 

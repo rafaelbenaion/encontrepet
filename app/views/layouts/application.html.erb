@@ -19,6 +19,15 @@
   $('[data-toggle="tooltip"]').tooltip()
   })
   </script>
+  <script>
+  $(document).ready(function(){
+  $('#button').button();
+
+  $('#button').click(function() {
+    $(this).button('loading');
+  });  
+});
+</script>
   <%= csrf_meta_tags %>
 </head>
 
@@ -127,16 +136,8 @@
     <strong><%= message %></strong>
 </div>
 <% end %> 
-      
 
     <div class="container">
-
-
-<div id="menucima">
-<h4 id="entrar5"><strong><a href="<%= adotar_path %>">Adotar</a></strong> | <strong><a href="<%= losts_path %>">Perdidos</a></strong></h4>
-</div>
-
-
     <%= yield %>
     <footer>
       <h5>© 2015 <a href="http://www.facebook.com/rafael.benaion">Rafael Benaion</a></h5>

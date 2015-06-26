@@ -190,6 +190,13 @@ p {
   max-width: 100%;
 }
 
+#comodoar {
+  text-align: left;
+  border-bottom: 1px inset #CC5200;
+  color: #CC5200;
+  padding-left: 20px;
+}
+
 #salve {
   text-align: center;
   background-color: #FF6600;
@@ -200,8 +207,10 @@ p {
   border-top: 8px outset #36A09C;
   border-bottom: 8px inset #CC5200;
   padding-top: 0;
-  margin-top: 40px;
+  margin-top: 5px;
   margin-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
   
 }
 
@@ -382,7 +391,7 @@ a:visited {
 .thumbnail-primary {
     padding: 10px;
     border: none;
-    background-image:linear-gradient(#FFC979, #FFC979);
+    background-image:linear-gradient(#FFEDD2, #FFBC58);
     background-repeat: repeat-x;
     border-radius: 3px;
     margin: 0;
@@ -392,7 +401,7 @@ a:visited {
 
 .thumbnail-primary:hover {
     background-color: #f5f3b4;
-    background-image:linear-gradient(#FFC979, #FFB445);
+    background-image:linear-gradient(#FFE5BF, #FFB445);
     background-repeat: repeat-x;
 }
 
@@ -514,3 +523,16 @@ a:visited {
     box-shadow: none;
 }
 
+.btn-primary.top {
+    box-shadow: 0 3px 0 0 #007299;
+}
+.btn-primary.top:active, .btn-primary.top.active {
+    background: #33a6cc;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+#menucima {
+  padding-bottom: 5px;
+}
