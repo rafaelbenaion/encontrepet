@@ -191,10 +191,9 @@ p {
 }
 
 #comodoar {
-  text-align: left;
+  text-align: center;
   border-bottom: 1px inset #CC5200;
   color: #CC5200;
-  padding-left: 20px;
 }
 
 #salve {
@@ -328,9 +327,6 @@ li.media a {
   padding-left: 20px;
 }
 
-#chatbot {
-
-}
 
 #cadastrar {
   float: right;
@@ -535,4 +531,8 @@ a:visited {
 
 #menucima {
   padding-bottom: 5px;
+}
+
+#salve {
+  padding: 0 30px;
 }
