@@ -418,7 +418,9 @@ a:visited {
 #sepa {
   padding: 7px;
   max-width: 260px;
+  min-width: 100px;
   display:inline-block;
+  box-sizing: in;
 }
 
 
@@ -430,7 +432,7 @@ a:visited {
     background-repeat: repeat-x;
     border-radius: 3px;
     margin: 0;
-    max-width: 260px;
+    max-width: 250px;
 
 }
 
@@ -456,7 +458,10 @@ a:visited {
   margin-top: 10px;
   display:inline-block;
   text-align: center;
+  clear: all;
+
 }
+
 
 #numeral {
   margin: 0;
@@ -575,4 +580,5 @@ a:visited {
 
 #salve {
   padding: 0 30px;
+
 }
