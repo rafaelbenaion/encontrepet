@@ -1,6 +1,6 @@
 <div class="jumbotron" id="ficarmenor2">
 <%= simple_form_for(@lost, html: {multipart: true}) do |f| %>
-  <h3 id="entrar2">Informações do animal</h3>
+  <h3 id="entrar2">Informações do animal desaparecido :</h3>
 </br >
   <div class="form-inputs">
     <%= f.input :name, label: "Nome do animal:" %>
@@ -11,7 +11,7 @@
     <div class="well">
 <%= f.input :photo, as: :file, label: "Foto do animal:" %>
 </div>
-    <%= f.input :city, label: "Cidade:", placeholder: 'Cidade e Estado do desaparecimento' %>
+    <%= f.input :city, label: "Cidade:", placeholder: 'Cidade e Estado do desaparecimento', :as => :select, :collection => [['Curitiba - PR', :'Curitiba - PR']] %>
     <%= f.input :bairro, label: "Bairro:", placeholder: 'Bairro do desaparecimento' %>
     <%= f.input :date, label: "Data do desaparecimento:" %>
     <%= f.input :phone, label: "Telefone:", placeholder: 'XX XXXX-XXXX' %>

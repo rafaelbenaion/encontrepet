@@ -46,13 +46,13 @@
 <img src="/encontrepet.png">
 </div>
 
-<div id="comodoar2">
-<h5><strong>Animais desaparecidos:</strong></h5>
-</div>
 
 <div class="container" id="cards">
 <div class="row">
 
+<div id="comodoar2">
+<h5><strong>Animais desaparecidos:</strong></h5>
+</div>
  
 <% @losts.each do |lost| %>
    <div class="col-sm-6 col-md-4">
@@ -86,7 +86,10 @@
 </div>
 </div>
 
-<%= link_to 'New Lost', new_lost_path %>
+<% if @losts.count == 0 %>
+<h4 id="comodoar3"><strong><i class="fa fa-thumbs-o-up fa-2x"></i> Nenhum animal perdido publicado!</strong></h4>
+<% end %>
+
 
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
