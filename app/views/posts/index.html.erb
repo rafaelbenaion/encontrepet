@@ -140,7 +140,7 @@
 
 
     <div class="thumbnail" id="animal">
-      <h2><%= post.name %>, <%= post.age %></h2>
+      <h2><%= post.name %></h2>
       
       <% if post.image %>
       <%= image_tag post.image.url(:thumb) %>
@@ -148,7 +148,7 @@
 
       </br>
       
-      <h4><%= post.animal %>  <%= post.gender %> | Porte <%= post.size %></h4>
+      <h4><%= post.animal %> | <%= post.gender %> | Porte <%= post.size %></h4>
 
       <div id="adotar_botao">
 
