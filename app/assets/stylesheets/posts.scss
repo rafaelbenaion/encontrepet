@@ -236,6 +236,7 @@ p {
 
 #logocom {
   max-width: 30%;
+  min-width: 200px;
 }
 
 .texto h1 {
@@ -343,6 +344,7 @@ footer a {
 
 footer img {
   max-width: 6%;
+  min-width: 50px;
 }
 
 li.media {
@@ -416,56 +418,48 @@ a:visited {
 }
 
 #sepa {
-  padding: 7px;
-  max-width: 260px;
-  min-width: 100px;
-  display:inline-block;
-  box-sizing: in;
-}
 
-
-
-.thumbnail-primary {
-    padding: 10px;
+  max-width: 250px;
+  padding: 10px;
     border: none;
     background-image:linear-gradient(#FFEDD2, #FFBC58);
-    background-repeat: repeat-x;
-    border-radius: 3px;
-    margin: 0;
-    max-width: 250px;
 
+    border-radius: 3px;
+    margin: 5px;
+    max-width: 250px;
 }
 
 
-.thumbnail-primary:hover {
+
+
+#sepa:hover {
     background-color: #f5f3b4;
     background-image:linear-gradient(#FFE5BF, #FFB445);
     background-repeat: repeat-x;
 }
 
-.thumbnail-primary:active, .thumbnail-primary.active {
+#sepa:active, #sepa.active {
     border-color: #007299;
     color: #007299;
     box-shadow: none;
 }
 
 #sepa img {
-  max-width: 95%;
+  max-width: 85%;
   margin-top: 15px;
 }
 
 #papara {
+   display: inline-block;
   margin-top: 10px;
-  display:inline-block;
   text-align: center;
-  clear: all;
 
 }
 
 
 #numeral {
   margin: 0;
-  padding: 0;
+  padding: 3px;
   text-align: left;
   color: #CCA161;
   overflow: auto;
