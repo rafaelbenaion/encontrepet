@@ -43,8 +43,8 @@
 
 <div id="menucima">
 
-<h4 id="entrar5"><strong> <strong><a href="<%= adotar_path %>" class="btn btn-primary top active">ADOTAR</a></strong>
-<a type="button" data-toggle="button" onclick="location.href='<%= losts_path %>';" class="btn btn-primary top" aria-pressed="false" autocomplete="off">PERDIDOS</a></strong></h4>
+<h4 id="entrar5"><strong> <strong><a href="<%= adotar_path %>" class="btn btn-primary top active">ADOTAR ANIMAIS</a></strong>
+<a type="button" data-toggle="button" onclick="location.href='<%= losts_path %>';" class="btn btn-primary top" aria-pressed="false" autocomplete="off">ANIMAIS PERDIDOS</a></strong></h4>
 
 </div>
 <div class="jumbotron" id="salve">
@@ -133,12 +133,6 @@
 <%end %>
 
 
-<div id="comodoar6">
-<h5><strong>ANIMAIS PARA ADOÇÃO</strong></h5>
-</div>
-
-
-
 
 
 <div class="container" id="cards">
@@ -166,10 +160,11 @@
 
       <% if user_signed_in? %>
       <h5> <%= link_to "Ver informações", post , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
-        <a href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
+        <a  data-tooltip="tooltip" data-placement="bottom" title="CHAT" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
       <% else %>
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
-        <button class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></button></h5>
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-success btn-lg", :id => "chatbot" %> 
+        
+        <a data-tooltip="tooltip" data-placement="bottom" title="CHAT"  class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></a></h5>
       <% end %>
 
 

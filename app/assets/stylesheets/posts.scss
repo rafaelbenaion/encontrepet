@@ -221,7 +221,7 @@ p {
   text-align: center;
   color: #FFF;
   margin-top: 10px;
-  background-color: #36A09C;
+
   padding: 2.5px;
 }
 
@@ -609,4 +609,12 @@ a:visited {
 .modal-content {
   border-radius: 0;
   border: 6px solid #43c8c3;
+}
+
+.tooltip-inner  {
+  background-color: #FF6600;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #ff5500;
 }

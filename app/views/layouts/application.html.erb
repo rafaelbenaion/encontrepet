@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Encontre Pet - Não compre, adote!</title>
+  <title>Encontrepet.com - Adote!</title>
   
  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' %>
@@ -15,9 +15,12 @@
   <meta name="author" content="">
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
   <script type="text/javascript">
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
+  $(document).ready(function() {
+    $('body').tooltip({
+        selector: "[data-tooltip=tooltip]",
+        container: "body"
+    });
+});
   </script>
   <script>
   $(document).ready(function(){
