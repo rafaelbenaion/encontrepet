@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encontrepet.com | Bem Vindo !</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style type="text/css">.tk-proxima-nova-soft{font-family:"proxima-nova-soft",sans-serif;}</style>
+  <link rel="stylesheet" href="https://use.typekit.net/c/13b6dc/1w;proxima-nova-soft,7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191,S2w:R:n4,S2x:R:n5,S2z:R:n7/d?3bb2a6e53c9684ffdc9a9afe1d5b2a6262b4be0bfc491ced4e51babf61457bcd45c064abb11f4930474791aa81bb8f532e58b4705dd9037fa122e4d3ebe3044ef7307a3f87027dba40c9d27f6e9e9d582ae392d45835bb" media="all">
+  <style>
+  body {
+    background-color: #43c8c3;
+    color: #2E2F30;
+   
+    margin: 0;
+    font-family: "proxima-nova-soft", "proxima-nova", Helvetica, Arial, sans-serif;
+    color: #3C545F;
+    text-align: center;
+  }
+
+  #a {
+padding: 30px;
+
+  }
+
+  #b {
+  	padding-bottom: 20px;
+  	padding-top: 0;
+  	font-size: 20px;
+  }
+
+  #c {
+  	padding-top:20px;
+  	max-width: 100%;
+  	display: block;
+  	margin: 0 auto;
+  }
+
+  #d {
+  	float: left;
+  	max-width: 10%;
+  }
+
+  
+  </style>
+
+</head>
+
+<body>
+
+
+<img id="c" src="/encontrepet.png">
+
+
+<div id="a">
+<h1>BEM VINDO!</h1>
+<h5 id="b">Encontrepet.com é uma simples rede social que facilita a adoção de animais que precisam de uma família.</h5>
+<a href="<%= adotar_path %>" class="btn btn-success btn-lg">Continuar</a>
+
+
+</div>
+
+
+</body>
+</html>

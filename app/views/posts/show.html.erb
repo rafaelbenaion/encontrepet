@@ -1,4 +1,6 @@
+<h5></h5>
 
+<div class="col-md-6">
 <div class="jumbotron" id="ficarmenor2">
 <h2 id="entrar2"><%= @post.name %>, <%= @post.age %></h2>
  </br >
@@ -7,6 +9,12 @@
       <%= image_tag @post.image.url(:thumb), :id => "foto_ficha" %>
       <% end %> 
  </br >
+ <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
 <legend>
 <h5>
   <strong>Dono:</strong>
@@ -117,3 +125,10 @@
 </div>
 
 </div>
+  </div>
+
+<div class="col-md-6">
+  <div class="jumbotron" id="ficarmenor4">
+    <div class="fb-comments" data-href="<%= request.url %>" data-width="430" data-numposts="5"></div>
+  </div>
+   </div>

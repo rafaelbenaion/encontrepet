@@ -26,16 +26,15 @@ Rails.application.routes.draw do
   end
 
 
-  root 'posts#index'
-
-  
-  get 'batepapo/index'
+  root "pages#show", page: "bemvindo"
 
   get 'profiles/show'
   
   get "adotar", to: 'posts#index', as: :adotar
 
   get "posts", to: 'posts#index'
+
+  get "/pages/:page" => "pages#show"
 
   get '/:id', to: 'profiles#show', as: :id do
     resources :conversations
