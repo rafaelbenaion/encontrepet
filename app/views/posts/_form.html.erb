@@ -33,7 +33,7 @@
 <h3 id="entrar2">Informações do doador</h3>
 </br >
 
-<%= f.input :cidade, label: "Cidade :", placeholder: 'Cidade e Estado'  %>
+<%= f.input :cidade, label: "Cidade :", placeholder: 'Cidade e Estado', :as => :select, :collection => [['Curitiba - PR', :'Curitiba - PR']] %>
 
 <%= f.input :telefone, label: "Telefone :", placeholder: 'XX XXXX-XXXX'  %>
 
