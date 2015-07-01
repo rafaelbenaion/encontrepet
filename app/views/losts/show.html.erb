@@ -128,11 +128,17 @@
 
 <% end %>
 
+<% if user_signed_in? %>
 <%= simple_form_for([@lost, @lost.comments.build]) do |f| %>
-<%= f.input :comment, label: "Escrever comentário:" %>
+<%= f.input :comment, label: "Escrever comentário:", placeholder: "Se você sabe alguma informação em relação a localização desse animal, envie um comentário para o dono." %>
 <button type="submit" class="btn btn-success" id="button" data-loading-text="Enviando..." autocomplete="off">Enviar</button>
 <% end %>
-
+<% else %>
+<%= simple_form_for([@lost, @lost.comments.build]) do |f| %>
+<%= f.input :comment, label: "Escrever comentário:", placeholder: "Se você sabe alguma informação em relação a localização desse animal, envie um comentário para o dono." %>
+<button type="submit" class="btn btn-success" disabled="disabled" id="button" data-loading-text="Enviando..." autocomplete="off">Enviar</button>
+<% end %>
+<% end %>
 
 </div>
 </div>
