@@ -7,6 +7,14 @@
       <%= image_tag @lost.photo.url(:thumb), :id => "foto_ficha" %>
   <% end %> 
 </br >
+<legend>
+ <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+</legend>
 
 <legend>
 <h5>
@@ -106,40 +114,9 @@
 <div class="col-md-6">
   <div class="jumbotron" id="ficarmenor4">
 
+    <div class="fb-comments" data-href="<%= request.url %>" data-width="430" data-numposts="5"></div>
+
             
-<h5 id="entrar3"><i class="fa fa-comments fa-lg"></i> Comentários <span class="badge"><%= @lost.comments.count %></span></h5>
-
-<legend></legend>
-<% @lost.comments.each do |comment| %>
-
-
-<h5><strong><%= link_to comment.user.first_name,  id_path(comment.user.profile_name) %>:</strong> <%= comment.comment %></h5><%= comment.created_at.strftime("%d/%m/%Y") %> <%= comment.created_at.strftime("%H:%M") %>
-
-<% if user_signed_in? %>
-   <% if current_user.profile_name.to_str == comment.user.profile_name.to_str %>
-       | <%= link_to "Apagar Comentário",[comment.lost, comment], method: :delete, data: {confirm: "Você tem certeza ?"}%>
-   <% else %>
-   <% end %>
-<% else %>
-<% end %>
-
-
-
-<legend></legend>
-
-<% end %>
-
-<% if user_signed_in? %>
-<%= simple_form_for([@lost, @lost.comments.build]) do |f| %>
-<%= f.input :comment, label: "Escrever comentário:", placeholder: "Se você sabe alguma informação em relação a localização desse animal, envie um comentário para o dono." %>
-<button type="submit" class="btn btn-success" id="button" data-loading-text="Enviando..." autocomplete="off">Enviar</button>
-<% end %>
-<% else %>
-<%= simple_form_for([@lost, @lost.comments.build]) do |f| %>
-<%= f.input :comment, label: "Escrever comentário:", placeholder: "Se você sabe alguma informação em relação a localização desse animal, envie um comentário para o dono." %>
-<button type="submit" class="btn btn-success" disabled="disabled" id="button" data-loading-text="Enviando..." autocomplete="off">Enviar</button>
-<% end %>
-<% end %>
 
 </div>
 </div>

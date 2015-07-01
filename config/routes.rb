@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   end
 
 
-  root "pages#show", page: "bemvindo"
+  root 'posts#index'
 
   get 'profiles/show'
   
