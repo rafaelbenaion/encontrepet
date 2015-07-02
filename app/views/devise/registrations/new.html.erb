@@ -5,6 +5,10 @@
   max-width: 38%;
   }
 
+#termos {
+  color: #666;
+}
+
 </style>
 
 <div class="jumbotron" id="ficarmenor2">
@@ -28,7 +32,7 @@
   <% if @validatable %>
   <em>(<%= @minimum_password_length %> characters minimum)</em>
   <% end %>
-
+<h6 id="termos"><i>Ao clicar em "Criar conta", você concorda com nossos <a href="/pages/termos2">Termos</a> e concorda que leu nossa <a href="/pages/termos">Política de Privacidade</a>.</i></h6>
 <div class="boto">
   <button type="submit" class="btn btn-success btn-lg btn-block btn-success">Criar conta</button>
   </fieldset>

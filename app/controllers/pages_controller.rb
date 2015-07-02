@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 	def show
       if valid_page?
-        render template: "pages/#{params[:page]}",  :layout => false
+        render template: "pages/#{params[:page]}"
       else
         render file: "public/404.html", status: :not_found
       end
