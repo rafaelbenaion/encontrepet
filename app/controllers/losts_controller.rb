@@ -60,8 +60,6 @@ class LostsController < ApplicationController
   # DELETE /losts/1
   # DELETE /losts/1.json
   def destroy
-    @lost.comments.destroy_all
-    @lost.destroy
     respond_to do |format|
       format.html { redirect_to losts_url, notice: 'Lost was successfully destroyed.' }
       format.json { head :no_content }

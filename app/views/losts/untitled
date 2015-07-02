@@ -1,3 +1,6 @@
+    @lost.comments.destroy_all
+    @lost.destroy
+
 <h5 id="entrar3"><i class="fa fa-comments fa-lg"></i> Comentários <span class="badge"><%= @lost.comments.count %></span></h5>
 
 <legend></legend>
