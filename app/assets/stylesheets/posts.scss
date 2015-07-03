@@ -30,6 +30,12 @@ h2 {
 
 .modal-body {
   text-align: left;
+
+}
+
+.modal-body img {
+  max-width: 14%;
+  
 }
 
 img {
@@ -677,8 +683,7 @@ a:visited {
 } 
 
 .modal-content {
-  border-radius: 0;
-  border: 6px solid #43c8c3;
+  border: 3px solid #43c8c3;
 }
 
 .tooltip-inner  {
