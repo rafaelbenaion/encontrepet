@@ -169,7 +169,7 @@
       <h2><%= post.name %></h2>
       
       <% if post.image %>
-      <%= image_tag post.image.url(:thumb) %>
+      <%= image_tag post.image.url(:thumb), onerror: "this.src='/default_photo.png'" %>
       <% end %>
 
       </br>

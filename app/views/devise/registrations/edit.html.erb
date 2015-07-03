@@ -1,22 +1,22 @@
 
 
 <div class="jumbotron" id="ficarmenor">
-<legend><h3>Editar informações :</h3></legend>
+<h3 id="entrar2">Editar informações :</h3>
+</br>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+
 
   <div class="field">
-    <%= f.input :email, autofocus: true, :label => "Alterar email:" %>
+    <%= f.input :email, :label => "Alterar email:" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
-  <strong>Alterar senha:</strong>
-  <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Mudar senha
+  <strong>Trocar de senha:</strong>
+  <button class="btn btn-warning btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Alterar senha
   </button>
   <div class="collapse" id="collapseExample">
     <div class="well">
@@ -42,12 +42,11 @@
 </br >
 
   <div class="actions">
-    <%= f.button :submit, "Salvar mudanças", :class => "btn btn-primary btn-block" %>
+    <button type="submit" class="btn btn-primary btn-block">Salvar alterações</button>
   </div>
 <% end %>
 
 
-
+</br>
 </div>
-</br >
-
+<h5 id="entrar"><strong>Precisa de ajuda? Contato: encontrepet.com@gmail.com</strong></h5>

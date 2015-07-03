@@ -27,5 +27,8 @@ module ApplicationHelper
 		end
 	end
 
+	def post_contagem
+		Post.all.count
+	end
 
 end
