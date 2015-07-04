@@ -1,4 +1,4 @@
-<script>
+ <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -22,7 +22,7 @@
         <% if current_user.profile_name.to_str == @user.profile_name.to_str %>
         <%= link_to 'Fazer uma nova doação', new_post_path, :class => "btn btn-primary", :id => "msg" %> <a id="msg" class="btn btn-warning" href="<%= edit_user_registration_path %>">Editar conta</a>
         <% else %>
-        <a id="msg" href="" data-sid="<%= current_user.id %>", data-rip="<%= @user.id %>" class="btn btn-success">Enviar mensagem</a>
+        <a  id="msg" data-placement="bottom" href="" data-sid="<%= current_user.id %>", data-rip="<%= @user.id %>" class="btn btn-success start-conversation">Enviar mensagem</a></h5>
         <% end %>
     <% else %>
         <button id="msg" class="btn btn-success" data-toggle="modal" data-target="#myModal3">Enviar mensagem</button>
@@ -93,3 +93,40 @@
   </div>
 </div>
 
+
+<% if user_signed_in? %>
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel"><i class="fa fa-comments"></i> Mensagens <%= link_to "Atualizar", adotar_path, :method => :get, class: "btn btn-success btn-xs start-conversation" %></h3>
+      </div>
+      <div class="modal-body">
+        
+        <% if @conversations.any? %>
+          <ul class="media-list">
+            <% @conversations.each do |conversation| %>
+                <li class="media">
+                  <%= image_tag("/default.png", class: "media-object pull-left") %>
+                  <div class="media-body">
+                    <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id, "data-toggle" => "modal", "data-target" => "#myModal2" %>
+                        <h4 class="media-heading"><%= conversation_interlocutor(conversation).name %></h4>
+                        <p>> <%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
+                  </div>
+                  <legend></legend>
+                </li>
+
+            <% end %>
+          </ul>
+      <% else %>
+          <p>Nenhuma mensagem encontrada.</p>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

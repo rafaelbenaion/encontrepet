@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   resources :losts do
     resources :conversations
-    resources :comments
+  end
+
+   resources :profiles do
+    resources :conversations
   end
 
 

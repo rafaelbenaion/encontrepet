@@ -75,19 +75,23 @@
       <% end %>
 
       </br>
-      <div id="adotar_botao">
+      
 
-      <% if user_signed_in? %>
-      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
-        <a data-tooltip="tooltip" data-placement="bottom" title="CHAT" href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
-      <% else %>
-      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
+      <div class"final" id="cor">
+       <legend></legend>   
        
-        <a data-tooltip="tooltip" data-placement="bottom" title="CHAT"  class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></a></h5>
+        <% if user_signed_in? %>
+      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-primary btn-lg", :id => "msg" %>  
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-success btn-lg start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
+      <% else %>
+      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-primary btn-lg", :id => "msg" %> 
+        
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success btn-lg start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
       <% end %>
 
+    </div>
 
-      </div> 
+
 
  
 

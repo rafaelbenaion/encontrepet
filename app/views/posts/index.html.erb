@@ -147,13 +147,37 @@
 <div id="filtro">
 <%= simple_form_for :post, :method => 'get', :url => "/", :html => {:class => 'form-inline'} do |f| %>
 
-
-<%= f.input :starts_with, input_html: { name: 'starts_with', :value => params[:starts_with] }, label: ('Nome do animal:  '), :required => false %>
-<%= f.input :gender, input_html: { name: 'gender', :value => params[:gender] }, label: ('Gênero:  '), :required => false, :as => :select, :collection => [['Macho', :Macho], ['Fêmea', :Fêmea]] %>
-<%= f.input :animal, input_html: { name: 'animal', :value => params[:animal] }, label: ('Animal:  '), :required => false, :as => :select, :collection => [['Cachorro', :Cachorro], ['Gato', :Gato], ['Outro', :Outro]]  %>
-<%= f.input :castrado, input_html: { name: 'castrado', :value => params[:castrado] }, label: ('Castrado:  '), :required => false, :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
-<%= f.input :vacinado, input_html: { name: 'vacinado', :value => params[:vacinado] }, label: ('Vacinado:  '), :required => false, :as => :select, :collection => [['Sim', :Sim], ['Não', :Não]]  %>
-<%= f.input :tamanho, input_html: { name: 'tamanho', :value => params[:tamanho] }, label: ('Tamanho:  '), :required => false, :as => :select, :collection => [['Pequeno', :Pequeno], ['Médio', :Médio], ['Grande', :Grande]]  %>
+<%= f.input :cidade, input_html: { name: 'cidade', :value => params[:cidade] }, label: ('Cidade:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Curitiba - PR', :'Curitiba - PR'],
+['Alagoas – Maceió', :'Alagoas – Maceió'],
+['Amapá – Macapá', :'Amapá – Macapá'],
+['Amazonas – Manaus', :'Amazonas – Manaus'],
+['Bahia – Salvador', :'Bahia – Salvador'],
+['Ceará – Fortaleza', :'Ceará – Fortaleza'],
+['Distrito Federal – Brasília', :'Distrito Federal – Brasília'],
+['Espírito Santo – Vitória', :'Espírito Santo – Vitória'],
+['Goiás – Goiânia', :'Goiás – Goiânia'],
+['Maranhão – São Luís', :'Maranhão – São Luís'],
+['Mato Grosso – Cuiabá', :'Mato Grosso – Cuiabá'],
+['Mato Grosso do Sul – Campo Grande', :'Mato Grosso do Sul – Campo Grande'],
+['Minas Gerais – Belo Horizonte', :'Minas Gerais – Belo Horizonte'],
+['Pará – Belém', :'Pará – Belém'],
+['Paraíba – João Pessoa', :'Paraíba – João Pessoa'],
+['Pernambuco – Recife', :'Pernambuco – Recife'],
+['Piauí – Teresina', :'Piauí – Teresina'],
+['Roraima – Boa Vista', :'Roraima – Boa Vista'],
+['Rondônia – Porto Velho', :'Rondônia – Porto Velho'],
+['Rio de Janeiro – Rio de Janeiro', :'Rio de Janeiro – Rio de Janeiro'],
+['Rio Grande do Norte – Natal', :'Rio Grande do Norte – Natal'],
+['Rio Grande do Sul – Porto Alegre', :'Rio Grande do Sul – Porto Alegre'],
+['Santa Catarina – Florianópolis', :'Santa Catarina – Florianópolis'],
+['São Paulo – São Paulo', :'São Paulo – São Paulo'],
+['Sergipe – Aracaju', :'Sergipe – Aracaju'],
+['Tocantins – Palmas', :'Tocantins – Palmas']], selected: "" %>
+<%= f.input :gender, input_html: { name: 'gender', :value => params[:gender] }, label: ('Gênero:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Macho', :Macho], ['Fêmea', :Fêmea]], selected: "" %>
+<%= f.input :animal, input_html: { name: 'animal', :value => params[:animal] }, label: ('Animal:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Cachorro', :Cachorro], ['Gato', :Gato], ['Outro', :Outro]], selected: "" %>
+<%= f.input :castrado, input_html: { name: 'castrado', :value => params[:castrado] }, label: ('Castrado:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Sim', :Sim], ['Não', :Não]], selected: "" %>
+<%= f.input :vacinado, input_html: { name: 'vacinado', :value => params[:vacinado] }, label: ('Vacinado:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Sim', :Sim], ['Não', :Não]], selected: "" %>
+<%= f.input :tamanho, input_html: { name: 'tamanho', :value => params[:tamanho] }, label: ('Tamanho:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Pequeno', :Pequeno], ['Médio', :Médio], ['Grande', :Grande]], selected: ""  %>
 
 <button type="submit" class="btn btn-success">
   <i class="fa fa-filter"></i> Filtrar
@@ -189,12 +213,12 @@
       <div id="adotar_botao">
 
       <% if user_signed_in? %>
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-success btn-lg", :id => "chatbot" %>  
-        <a  data-tooltip="tooltip" data-placement="bottom" title="CHAT" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-primary btn-lg start-conversation"><i class="fa fa-comments"></i></a></h5>
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary btn-lg", :id => "msg" %>  
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-success btn-lg start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
       <% else %>
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-success btn-lg", :id => "chatbot" %> 
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary btn-lg", :id => "msg" %> 
         
-        <a data-tooltip="tooltip" data-placement="bottom" title="CHAT"  class="btn btn-primary btn-lg start-conversation" data-toggle="modal" data-target="#myModal3"><i class="fa fa-comments"></i></a></h5>
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success btn-lg start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
       <% end %>
 
 

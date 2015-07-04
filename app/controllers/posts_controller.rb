@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 end
 
 def filtering_params(params)
-  params.slice(:tamanho, :animal, :gender, :starts_with, :castrado, :vacinado)
+  params.slice(:tamanho, :animal, :gender, :starts_with, :castrado, :vacinado, :cidade)
 end
  
 

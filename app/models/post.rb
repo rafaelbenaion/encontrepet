@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
     validates :telefone, presence: true
     validates :image, :attachment_presence => true
 
-
+      scope :cidade, -> (cidade) { where("cidade like ?", "#{cidade}%")}
       scope :animal, -> (animal) { where("animal like ?", "#{animal}%")}
       scope :gender, -> (gender) { where("gender like ?", "#{gender}%")}
       scope :starts_with, -> (name) { where("LOWER(name) like ?", "#{name.downcase}%")}
