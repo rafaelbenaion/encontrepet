@@ -209,8 +209,9 @@
 
     <div class"final" id="cor">
        <legend></legend>   
-       
+
        <h6><strong>Por <%= link_to post.user.name, id_path(post.user.profile_name) %> | <%= time_ago_in_words(post.created_at).capitalize + " ago." %></strong> </h6>
+       <div class="fb-like" data-href="<%= post_url(post) %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
     </div>
 
 </div>
