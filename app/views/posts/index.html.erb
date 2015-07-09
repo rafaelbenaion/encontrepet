@@ -194,15 +194,16 @@
       
       <h4><%= post.animal %> | <%= post.gender %> | Porte <%= post.size %></h4>
 
-      
-</br>
+      <div id="adotar_botao">
+
+   
+
+      </div> 
+
     <div class"final" id="cor">
        <legend></legend>   
 
-      
-
-   
-   <% if user_signed_in? %>
+          <% if user_signed_in? %>
       <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary btn-lg", :id => "msg" %>  
         <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-success btn-lg start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
       <% else %>
@@ -211,7 +212,7 @@
         <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success btn-lg start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
       <% end %>
 
-     
+    </div>
 
 </div>
  </div>
