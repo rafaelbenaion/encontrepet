@@ -9,104 +9,86 @@
 
 </script>
 
+<style>
+#ficarmenor32 {
+  background-image:url('<%= @post.image.url %>');
+  background-repeat: no-repeat;
+
+    background-position: 0% 988%;
+
+}
+
+</style>
+
 <div class="col-md-6">
-<div class="jumbotron" id="ficarmenor2">
-<h2 id="entrar2"><%= @post.name %>, <%= @post.age %></h2>
- </br >
+<div class="jumbotron" id="ficarmenor32">
+</br>
+  <fieldset>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="40%" align="left"> 
 
-  <% if @post.image %>
-      <%= image_tag @post.image.url(:thumb), :id => "foto_ficha" %>
+      <% if @post.image %>
+      <%= image_tag @post.image.url(:thumb)%>
       <% end %> 
+
+      </td>
+
+      <td align="left"><div id="info">
+    <legend id="riscosempadd"><h2><%= @post.name %>, <%= @post.age %>
+
+   
+    
+
+    </h2></legend>
+    <h5><strong>Dono: </strong><%= link_to @post.user.name, id_path(@post.user.profile_name) %></h5>
+    <h5><strong>Cidade: </strong><%= @post.cidade %></h5>
+    <h5><strong>Foto: </strong><%= post_foto @post %></h5>
+    </div></td>
+      </tr>
+    </table>
+    
+  </fieldset>
+
+
+<table class="table">
+      <thead>
  </br >
- <legend>
-  <div id="entrar" class="fb-like" data-href="<%= request.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-</legend>
-<legend>
-<h5>
-  <strong>Dono:</strong>
-  <%= link_to @post.user.name, id_path(@post.user.profile_name) %>
-</h5>
-</legend>
+      </thead>
+      <tbody>
+        <tr class="active">
+          <th scope="row">Castrado:</th>
+          <td><%= @post.castrado %></td>
+          <th scope="row">Vacinado:</th>
+          <td><%= @post.vacinado %></td>
+        </tr>
+        <tr class="active">
+          <th scope="row">Animal:</th>
+          <td><%= @post.animal %></td>
+          <th scope="row">Tamanho:</th>
+          <td><%= @post.size %></td>
+        </tr>
+        <tr class="active">
+          <th scope="row">Gênero:</th>
+          <td><%= @post.gender %></td>
+          <th scope="row">Idade:</th>
+          <td><%= @post.age %></td>
+        </tr>
 
-<legend>  
-<h5>
-  <strong>Cidade:</strong>
-  <%= @post.cidade %>
-</h5>
-</legend>
 
-<legend>  
-<h5>
-  <strong>Animal:</strong>
-  <%= @post.animal %>
-</h5>
-</legend>
-
-<legend>
-<h5>
-  <strong>Gênero:</strong>
-  <%= @post.gender %>
-</h5>
-</legend>
-
-<legend>
-<h5>
-  <strong>Idade:</strong>
-  <%= @post.age %>
-</h5>
-</legend>
-
-<legend>
-<h5>
-  <strong>Tamanho:</strong>
-  <%= @post.size %>
-</h5>
-</legend>
-
-<legend>
-<h5>
-  <strong>Castrado:</strong>
-  <%= @post.castrado %>
-</h5>
-</legend>
-
-<legend>
-<h5>
-  <strong>Vacinado:</strong>
-<%= @post.vacinado %>
-</h5>
-</legend>
-
-<legend>
-<h5>
-<strong>Sobre:</strong>
+      </tbody>
+    </table>
+<h5><strong>Sobre:</strong></br >
 <%= @post.about %>
 </h5>
-</legend>
 
- <legend>
-<h5>
-<strong>Foto:</strong>
- <%= post_foto @post %>
-</h5>
-</legend>
 
 
 <div id="botaofinal">
-<button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#myModal">Contatos</button>
-<%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block" %>
+<button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">Contatos</button>
+<%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block"  %>
      
-      <% if user_signed_in? %>
-        <div class="footer">
-          <span class="admin">
-          <% if current_user.profile_name.to_str == @post.user.profile_name.to_str %>
-            <h6><%= link_to ' Editar', edit_post_path(@post), :class => "btn btn-xs btn-primary" %>  <%= link_to ' Apagar', @post, method: :delete, data: { confirm: 'Você tem certeza de que quer apagar? Não tem como desfazer depois!' }, :class => "btn btn-xs btn-danger" %></h6>
-          <% else %>
-          <% end %>
-          </span>
-        </div> 
-      <% else %>
-      <% end %>
+     
 <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -130,7 +112,20 @@
 </div>
 </div>
 
+</br>
 </div>
+ <% if user_signed_in? %>
+        <div class="footer">
+          <span class="admin">
+          <% if current_user.profile_name.to_str == @post.user.profile_name.to_str %>
+            <h6><%= link_to ' Editar', edit_post_path(@post), :class => "btn btn-xs btn-primary",  :id => "msg" %>  <%= link_to ' Apagar', @post, method: :delete, data: { confirm: 'Você tem certeza de que quer apagar? Não tem como desfazer depois!' }, :class => "btn btn-xs btn-danger",  :id => "msg" %></h6>
+          <% else %>
+          <% end %>
+          </span>
+        </div> 
+      <% else %>
+      <% end %>
+  <div id="entrar" class="fb-like" data-href="<%= request.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
   </div>
 
 <div class="col-md-6">
