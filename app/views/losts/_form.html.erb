@@ -11,7 +11,34 @@
     <div class="well">
 <%= f.input :photo, as: :file, label: "Foto do animal:" %>
 </div>
-    <%= f.input :city, label: "Cidade:", placeholder: 'Cidade e Estado do desaparecimento', :as => :select, :collection => [['Curitiba - PR', :'Curitiba - PR']] %>
+    <%= f.input :city, label: "Cidade :", placeholder: 'Cidade e Estado', :as => :select, :collection => [['Curitiba - PR', :'Curitiba - PR'],
+
+['Alagoas – Maceió', :'Alagoas – Maceió'],
+['Amapá – Macapá', :'Amapá – Macapá'],
+['Amazonas – Manaus', :'Amazonas – Manaus'],
+['Bahia – Salvador', :'Bahia – Salvador'],
+['Ceará – Fortaleza', :'Ceará – Fortaleza'],
+['Distrito Federal – Brasília', :'Distrito Federal – Brasília'],
+['Espírito Santo – Vitória', :'Espírito Santo – Vitória'],
+['Goiás – Goiânia', :'Goiás – Goiânia'],
+['Maranhão – São Luís', :'Maranhão – São Luís'],
+['Mato Grosso – Cuiabá', :'Mato Grosso – Cuiabá'],
+['Mato Grosso do Sul – Campo Grande', :'Mato Grosso do Sul – Campo Grande'],
+['Minas Gerais – Belo Horizonte', :'Minas Gerais – Belo Horizonte'],
+['Pará – Belém', :'Pará – Belém'],
+['Paraíba – João Pessoa', :'Paraíba – João Pessoa'],
+['Pernambuco – Recife', :'Pernambuco – Recife'],
+['Piauí – Teresina', :'Piauí – Teresina'],
+['Roraima – Boa Vista', :'Roraima – Boa Vista'],
+['Rondônia – Porto Velho', :'Rondônia – Porto Velho'],
+['Rio de Janeiro – Rio de Janeiro', :'Rio de Janeiro – Rio de Janeiro'],
+['Rio Grande do Norte – Natal', :'Rio Grande do Norte – Natal'],
+['Rio Grande do Sul – Porto Alegre', :'Rio Grande do Sul – Porto Alegre'],
+['Santa Catarina – Florianópolis', :'Santa Catarina – Florianópolis'],
+['São Paulo – São Paulo', :'São Paulo – São Paulo'],
+['Sergipe – Aracaju', :'Sergipe – Aracaju'],
+['Tocantins – Palmas', :'Tocantins – Palmas']] %>
+
     <%= f.input :bairro, label: "Bairro:", placeholder: 'Bairro do desaparecimento' %>
     <%= f.input :date, label: "Data do desaparecimento:" %>
     <%= f.input :phone, label: "Telefone:", placeholder: 'XX XXXX-XXXX' %>

@@ -1,4 +1,47 @@
 
+<div class="col-md-3">
+
+<div class="jumbotron" data-spy="affix" id="salve2">
+<h6 style="color=#444; padding:0; padding-left:3px;"><strong>PÁGINAS</strong></h6>
+<button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default active" id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
+<button onclick="location.href='<%= losts_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-search" id="i3"></i> Animais perdidos</button>
+<button onclick="location.href='<%= new_post_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-tag " id="i2"></i> Doar</button>
+
+
+<% if user_signed_in? %>
+<h6 style="color=#444; padding:0; padding-left:3px;"><strong>CONTA</strong></h6>
+<button onclick="location.href='<%= id_path(current_user.profile_name) %>';" type="submit" class="btn btn-block btn-default" id="msg2"><i class="fa fa-user" id="i"></i> Meu perfil</button>
+<button onclick="location.href='#';" type="submit" class="btn btn-block btn-default" id="msg2"  data-toggle="modal" data-target="#myModal2"><i class="fa fa-envelope" id="i22"></i> Mensagens</button>
+<button onclick="location.href='<%= edit_user_registration_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-cog" id="i"></i> Editar minha conta</button>
+<button onclick="location.href='<%= sair_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-sign-out" id="i3"></i> Sair</button>
+
+<h6>Logado como <%= current_user.name %></h6>
+
+
+<% else %>
+<h6 style="color=#444; padding:0; padding-left:3px;"><strong>ENTRAR</strong></h6>
+<div id="ladoentrar">
+<%= simple_form_for(:user, :defaults => { :input_html => { :class => "form-control" } }, as: resource_name, url: session_path(:user)) do |f| %>
+ 
+
+ <%= f.input :email, label: false, :placeholder => "seu@email.com" %>
+ <%= f.input :password, label: false, :placeholder => "senha" %>
+  <div class="actions">
+    <button type="submit" class="btn btn-success btn-block btn-primary" id="msg">Entrar</button>
+  </div>
+ <h6><a href="/cadastrar">Criar uma conta</a></h6>
+</div>
+
+<% end %>
+<% end %>
+
+</div>
+
+</div>
+
+
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -51,22 +94,15 @@
 <% end %>
 
 
-</div>
+
+<div class="col-md-9">
 
 
-<div id="menucima">
-
-<h4 id="entrar5"><strong> <strong><a href="<%= adotar_path %>" class="btn btn-primary top active">ADOTAR ANIMAIS</a></strong>
-<a type="button" data-toggle="button" onclick="location.href='<%= losts_path %>';" class="btn btn-primary top" aria-pressed="false" autocomplete="off">ANIMAIS PERDIDOS</a></strong></h4>
-<div id ="entrar5" class="fb-like" data-href="https://facebook.com/encontrepet/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
-</div>
 <div class="jumbotron" id="salve">
   <div id="comodoar">
-    <h5><strong><i class="fa fa-exclamation-triangle fa-lg"></i> COMO FAZER UMA DOAÇÃO:</strong></h5>
+    <h4><strong>Dica:</strong></h4>
   </div>
 <div class="texto">
-
 <div class="bs-example">
     <div class="row" id="papara">
 
@@ -76,7 +112,7 @@
           <h2 id="numeral"><strong>1</strong></h2>
           <img src="/primeiro1.png">
           <h4><strong id="entrar5">Resgate</strong></h4>
-          <h5 id="entrar4">Salve um animal que esteja abandonado precisando de ajuda.</h5>
+          <h5 id="entrar4">Salve um animal que esteja abandonado</h5>
            </div>
           </a>
       
@@ -86,7 +122,7 @@
             <h2 id="numeral"><strong>2</strong></h2>
           <img src="/segundo2.png">
           <h4><strong id="entrar5">Cadastre-se</strong></h4>
-          <h5 id="entrar4">Faça seu cadastro no Encontre Pet, é simples e rápido.</h5>
+          <h5 id="entrar4">Faça seu cadastro no Encontrepet.com</h5>
            </div>
           </a>
     
@@ -96,7 +132,7 @@
             <h2 id="numeral"><strong>3</strong></h2>
           <img src="/terceiro2.png" >
           <h4><strong id="entrar5">Crie um post</strong></h4>
-          <h5 id="entrar4">Envie uma foto do animal e preencha a sua ficha.</h5>
+          <h5 id="entrar4">Envie foto do animal, preencha a ficha</h5>
            </div>
           </a>
    
@@ -106,7 +142,7 @@
             <h2 id="numeral"><strong>4</strong></h2>
           <img src="/quarto3.png">
           <h4><strong id="entrar5">Final feliz</strong></h4>
-          <h5 id="entrar4">Aguarde e seu amigo vai encontrar uma nova família.</h5>
+          <h5 id="entrar4">Seu amigo vai encontrar uma família</h5>
            </div>
           </a>
      
@@ -131,7 +167,7 @@
 <div id="filtro">
 <%= simple_form_for :post, :method => 'get', :url => "/", :html => {:class => 'form-inline'} do |f| %>
 
-<%= f.input :cidade, input_html: { name: 'cidade', :value => params[:cidade] }, label: ('Cidade:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Curitiba - PR', :'Curitiba - PR'],
+<%= f.input :cidade, input_html: { name: 'cidade', :value => params[:cidade] }, label: ('Cidade:  '), :required => false, :as => :select, :collection => [['Todas', :''], ['Curitiba - PR', :'Curitiba - PR'],
 ['Alagoas – Maceió', :'Alagoas – Maceió'],
 ['Amapá – Macapá', :'Amapá – Macapá'],
 ['Amazonas – Manaus', :'Amazonas – Manaus'],
@@ -156,7 +192,7 @@
 ['Santa Catarina – Florianópolis', :'Santa Catarina – Florianópolis'],
 ['São Paulo – São Paulo', :'São Paulo – São Paulo'],
 ['Sergipe – Aracaju', :'Sergipe – Aracaju'],
-['Tocantins – Palmas', :'Tocantins – Palmas']], selected: "" %>
+['Tocantins – Palmas', :'Tocantins – Palmas']] %>
 <%= f.input :gender, input_html: { name: 'gender', :value => params[:gender] }, label: ('Gênero:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Macho', :Macho], ['Fêmea', :Fêmea]], selected: "" %>
 <%= f.input :animal, input_html: { name: 'animal', :value => params[:animal] }, label: ('Animal:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Cachorro', :Cachorro], ['Gato', :Gato], ['Outro', :Outro]], selected: "" %>
 <%= f.input :castrado, input_html: { name: 'castrado', :value => params[:castrado] }, label: ('Castrado:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Sim', :Sim], ['Não', :Não]], selected: "" %>
@@ -173,10 +209,14 @@
 
 
 
-<div class="container" id="cards">
+<div id="cards">
 <div class="row tabela">
 
-
+<style type="text/css">
+#animal h2 {
+    font-family: "proxima-nova-soft", "proxima-nova", Helvetica, Arial, sans-serif; 
+}
+</style>
 
  
 <% @posts.each do |post| %>
@@ -184,15 +224,18 @@
 
 
     <div class="thumbnail" id="animal">
-      <h2><%= post.name %></h2>
+      <h2><%= post.name.upcase %></h2>
       
       <% if post.image %>
       <%= image_tag post.image.url(:thumb), onerror: "this.src='/default_photo.png'", :id => "foto_ficha2" %>
       <% end %>
 
-      </br>
-      
-      <h4><%= post.animal %> | <%= post.gender %> | Porte <%= post.size %></h4>
+      <div id="adotar_botao">
+
+   
+
+      </div> 
+      <h4><span class="label label-default"><%= post.animal %> | <%= post.gender %> | Porte <%= post.size %></span></h4>
 
       <div id="adotar_botao">
 
@@ -204,12 +247,12 @@
        <legend></legend>   
 
           <% if user_signed_in? %>
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary btn-lg", :id => "msg" %>  
-        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-success btn-lg start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary", :id => "msg" %>  
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-success start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
       <% else %>
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary btn-lg", :id => "msg" %> 
+      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary", :id => "msg" %> 
         
-        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success btn-lg start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
       <% end %>
 
     </div>
@@ -242,4 +285,9 @@
       </div>
     </div>
   </div>
+</div>
+
+
+
+
 </div>

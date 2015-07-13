@@ -1,6 +1,6 @@
-<h1>Editing Lost</h1>
 
+<% if current_user.profile_name.to_str == @lost.user.profile_name.to_str %>
 <%= render 'form' %>
-
-<%= link_to 'Show', @lost %> |
-<%= link_to 'Back', losts_path %>
+<% else %>
+<%= render :file => 'public/422.html' %>
+<% end %>

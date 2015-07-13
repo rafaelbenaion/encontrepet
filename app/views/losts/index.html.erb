@@ -1,3 +1,5 @@
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -47,21 +49,67 @@
 <% end %>
 
 
+
+<div class="col-md-3">
+
+<div class="jumbotron" data-spy="affix" id="salve2">
+<h6 style="color=#444; padding:0; padding-left:3px;"><strong>PÁGINAS</strong></h6>
+<button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default" id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
+<button onclick="location.href='<%= losts_path %>';" type="submit" class="btn  btn-block btn-default active" id="msg2"><i class="fa fa-search" id="i3"></i> Animais perdidos</button>
+<button onclick="location.href='<%= new_post_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-tag " id="i2"></i> Doar</button>
+
+
+<% if user_signed_in? %>
+<h6 style="color=#444; padding:0; padding-left:3px;"><strong>CONTA</strong></h6>
+<button onclick="location.href='<%= id_path(current_user.profile_name) %>';" type="submit" class="btn btn-block btn-default" id="msg2"><i class="fa fa-user" id="i"></i> Meu perfil</button>
+<button onclick="location.href='#';" type="submit" class="btn btn-block btn-default" id="msg2"  data-toggle="modal" data-target="#myModal2"><i class="fa fa-envelope" id="i22"></i> Mensagens</button>
+<button onclick="location.href='<%= edit_user_registration_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-cog" id="i"></i> Editar minha conta</button>
+<button onclick="location.href='<%= sair_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-sign-out" id="i3"></i> Sair</button>
+
+<h6>Logado como <%= current_user.name %></h6>
+
+
+<% else %>
+<h6 style="color=#444; padding:0; padding-left:3px;"><strong>ENTRAR</strong></h6>
+<div id="ladoentrar">
+<%= simple_form_for(:user, :defaults => { :input_html => { :class => "form-control" } }, as: resource_name, url: session_path(:user)) do |f| %>
+ 
+
+ <%= f.input :email, label: false, :placeholder => "seu@email.com" %>
+ <%= f.input :password, label: false, :placeholder => "senha" %>
+  <div class="actions">
+    <button type="submit" class="btn btn-success btn-block btn-primary" id="msg">Entrar</button>
+  </div>
+ <h6><a href="/cadastrar">Criar uma conta</a></h6>
 </div>
 
-<div id="menucima">
-<h4 id="entrar5"><strong><a type="button" data-toggle="button" onclick="location.href='<%= adotar_path %>';" class="btn btn-primary top" aria-pressed="false" autocomplete="off">ADOTAR ANIMAIS</a></strong> <strong><a href="<%= losts_path %>" class="btn btn-primary top active">ANIMAIS PERDIDOS</a></strong></h4>
-<div id ="entrar5" class="fb-like" data-href="https://facebook.com/encontrepet/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+<% end %>
+<% end %>
+
 </div>
+
+</div>
+
+<div class="col-md-9">
+
+
+
+
 
 <div class="jumbotron" id="salve">
+  <div id="comodoar">
+    <h4><strong>Dica:</strong></h4>
+  </div>
+  
+
 <a href="<%= new_lost_path %>"><img id="fala" src="/FALA3.png"></a>
-</div>
+  </div>
+
 </br >
 
 
 
-<div class="container" id="cards">
+<div id="cards">
 <div class="row">
 
  
@@ -79,17 +127,15 @@
       
 
       <div class"final" id="cor">
-       <legend></legend>   
-       
+     
         <% if user_signed_in? %>
-      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-primary btn-lg", :id => "msg" %>  
-        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-success btn-lg start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
+      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-primary ", :id => "msg" %>  
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= lost.user.id %>" class="btn btn-success start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
       <% else %>
-      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-primary btn-lg", :id => "msg" %> 
+      <h5> <%= link_to "Ver informações", lost , :class => "btn btn-primary ", :id => "msg" %> 
         
-        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success btn-lg start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
+        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
       <% end %>
-             <div class="fb-like" data-href="<%= lost_url(lost) %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 
     </div>
 
@@ -123,4 +169,7 @@
       </div>
     </div>
   </div>
+</div>
+
+
 </div>

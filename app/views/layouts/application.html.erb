@@ -155,17 +155,16 @@
                </button>
                
                 <ul class="dropdown-menu">
-                  <li><a href="<%= edit_user_registration_path %>"><i class="fa fa-cog"></i> Editar conta</a></li>
+                  <li><a href="<%= edit_user_registration_path %>"><i class="fa fa-cog" id="i"></i> Editar conta</a></li>
                   <li role="separator" class="divider"></li>
-                  <li><a href="<%= sair_path %>"><i class="fa fa-sign-out"></i> Sair</a></li>
+                  <li><a href="<%= sair_path %>"><i class="fa fa-sign-out" id="i3"></i> Sair</a></li>
                 </ul>
               
 
             <% else %>
             
-            <button class="btn btn-primary navbar-btn sharp" onclick="location.href='<%= entrar_path %>';">Entrar</button>
-               
-               <%= link_to 'Cadastrar', cadastrar_path, :class => "btn btn-success navbar-btn sharp" %>
+            <strong><a href="<%= entrar_path %>">Entrar</a></strong>
+               <%= link_to 'Cadastrar', cadastrar_path, :class => "btn btn-success navbar-btn sharp", :style => "margin-left:10px;" %>
                
             <% end %>
             </div>
@@ -207,6 +206,6 @@
 
       <%#= <a href="http://www.freepik.com/free-vector/dog-cartoon-vector-design_718544.htm">Cartoons Designed by Freepik</a> %>
       </br >
-      <div class="fb-like" data-href="https://www.facebook.com/118543718481622" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+      <div class="fb-like" data-href="https://www.facebook.com/118543718481622" data-width="335" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </footer>
 
