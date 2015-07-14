@@ -24,8 +24,9 @@
 <div class="col-md-3">
 
 <div class="jumbotron" data-spy="affix" id="salve2">
-<h6 style="color=#444; padding:0; padding-left:3px;"><strong>PÁGINAS</strong></h6>
-<button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default" id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
+<h6 style="color=#4
+}44; padding:0; padding-left:3px;"><strong>PÁGINAS</strong></h6>
+<button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default active" id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
 <button onclick="location.href='<%= losts_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-search" id="i3"></i> Animais perdidos</button>
 <button onclick="location.href='<%= new_post_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-tag " id="i2"></i> Doar</button>
 
@@ -42,6 +43,15 @@
 
 <% else %>
 <h6 style="color=#444; padding:0; padding-left:3px;"><strong>ENTRAR</strong></h6>
+
+<div id="ladoentrar2">
+  <div class="actions">
+    <button onclick="location.href='<%= entrar_path %>';" type="submit" class="btn btn-success btn-block btn-primary" id="msg">Entrar</button>
+  </div>
+ <h6><a href="/cadastrar">Criar uma conta</a></h6>
+</div>
+
+
 <div id="ladoentrar">
 <%= simple_form_for(:user, :defaults => { :input_html => { :class => "form-control" } }, as: resource_name, url: session_path(:user)) do |f| %>
  
@@ -67,8 +77,12 @@
 </br>
   <fieldset>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <thead>
+       </br >
+      </thead>
+      <tbody>
       <tr>
-        <td width="40%" align="left"> 
+      <td width="40%" align="left"> 
 
       <% if @post.image %>
       <%= image_tag @post.image.url(:thumb)%>
@@ -76,60 +90,97 @@
 
       </td>
 
-      <td align="left"><div id="info">
+      <td align="left">
     <legend id="riscosempadd"><h2><%= @post.name %>, <%= @post.age %>
 
    
     
 
     </h2></legend>
-    <h5><strong>Dono: </strong><%= link_to @post.user.name, id_path(@post.user.profile_name) %></h5>
-    <h5><strong>Cidade: </strong><%= @post.cidade %></h5>
-    <h5><strong>Foto: </strong><%= post_foto @post %></h5>
-    </div></td>
+    <h5><strong><i class="fa fa-user fa-lg" id="i22"></i></strong> <%= link_to @post.user.name, id_path(@post.user.profile_name) %></h5>
+    <h5><strong><i class="fa fa-globe fa-lg" id="i22"></i> </strong><%= @post.cidade %></h5>
+    <h5><strong><i class="fa fa-camera" id="i"></i> </strong><%= post_foto @post %></h5>
+     <% if user_signed_in? %>
+        <div class="footer">
+          <span class="admin">
+          <% if current_user.profile_name.to_str == @post.user.profile_name.to_str %>
+            <h6><%= link_to ' Editar', edit_post_path(@post), :class => "btn btn-xs btn-primary",  :id => "msg" %>  <%= link_to ' Apagar', @post, method: :delete, data: { confirm: 'Você tem certeza de que quer apagar? Não tem como desfazer depois!' }, :class => "btn btn-xs btn-danger",  :id => "msg" %></h6>
+          <% else %>
+          <% end %>
+          </span>
+        </div> 
+      <% else %>
+      <% end %>
+    </td>
       </tr>
+    </tbody>
     </table>
     
   </fieldset>
 
-
+<div class="row" style="padding:0; margin:0;">
+<div class="col-md-5" style="padding:0;padding-right:5px;">
+  <table class="table">
+      <thead>
+ </br >
+      </thead>
+      <tbody>
+         <tr class="">
+          <th scope="row">Sobre:</th>
+        </tr>
+        <tr class="active">
+        <td><%= @post.about %></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div class="col-md-7" style="padding:0;">
 <table class="table">
       <thead>
  </br >
       </thead>
       <tbody>
-        <tr class="active">
-          <th scope="row">Castrado:</th>
-          <td><%= @post.castrado %></td>
-          <th scope="row">Vacinado:</th>
-          <td><%= @post.vacinado %></td>
+        <tr class="">
+          <th scope="row">Informações:</th>
+          <td scope="row"></td>
         </tr>
-        <tr class="active">
+         <tr class="active">
           <th scope="row">Animal:</th>
           <td><%= @post.animal %></td>
-          <th scope="row">Tamanho:</th>
-          <td><%= @post.size %></td>
         </tr>
         <tr class="active">
           <th scope="row">Gênero:</th>
           <td><%= @post.gender %></td>
+        </tr>
+        <tr class="active">
+          <th scope="row">Tamanho:</th>
+          <td><%= @post.size %></td>
+        </tr>
+         <tr class="active">
           <th scope="row">Idade:</th>
           <td><%= @post.age %></td>
         </tr>
-
+        <tr class="active">
+          <th scope="row">Castrado:</th>
+          <td><%= @post.castrado %></td>
+        </tr>
+        <tr class="active">  
+          <th scope="row">Vacinado:</th>
+          <td><%= @post.vacinado %></td>
+        </tr>
+       
+        
+        
 
       </tbody>
     </table>
-<h5><strong>Sobre:</strong></br >
-<%= @post.about %>
-</h5>
-
+</div>
+</div>
 
 
 <div id="botaofinal">
 <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">Contatos</button>
 <%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block"  %>
-     
      
 <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -154,21 +205,10 @@
 </div>
 </div>
 
-</br>
 </div>
- <% if user_signed_in? %>
-        <div class="footer">
-          <span class="admin">
-          <% if current_user.profile_name.to_str == @post.user.profile_name.to_str %>
-            <h6><%= link_to ' Editar', edit_post_path(@post), :class => "btn btn-xs btn-primary",  :id => "msg" %>  <%= link_to ' Apagar', @post, method: :delete, data: { confirm: 'Você tem certeza de que quer apagar? Não tem como desfazer depois!' }, :class => "btn btn-xs btn-danger",  :id => "msg" %></h6>
-          <% else %>
-          <% end %>
-          </span>
-        </div> 
-      <% else %>
-      <% end %>
-  <div id="entrar" class="fb-like" data-href="<%= request.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+<div id="entrar" class="fb-like" data-href="<%= request.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
   </div>
+
 
 <div class="col-md-4">
   <div class="jumbotron" id="ficarmenor4">

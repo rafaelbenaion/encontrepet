@@ -14,7 +14,7 @@ module ApplicationHelper
 	def post_foto (post)
 		html = ""
 		if post.image 
-			html << link_to("clique para ver foto inteira", @post.image.url)
+			html << link_to("clique para ver foto", @post.image.url)
 			return html.html_safe
 		end
 	end

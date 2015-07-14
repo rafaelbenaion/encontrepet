@@ -1,8 +1,10 @@
 
+
 <div class="col-md-3">
 
 <div class="jumbotron" data-spy="affix" id="salve2">
-<h6 style="color=#444; padding:0; padding-left:3px;"><strong>PÁGINAS</strong></h6>
+<h6 style="color=#4
+}44; padding:0; padding-left:3px;"><strong>PÁGINAS</strong></h6>
 <button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default active" id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
 <button onclick="location.href='<%= losts_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-search" id="i3"></i> Animais perdidos</button>
 <button onclick="location.href='<%= new_post_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-tag " id="i2"></i> Doar</button>
@@ -20,6 +22,15 @@
 
 <% else %>
 <h6 style="color=#444; padding:0; padding-left:3px;"><strong>ENTRAR</strong></h6>
+
+<div id="ladoentrar2">
+  <div class="actions">
+    <button onclick="location.href='<%= entrar_path %>';" type="submit" class="btn btn-success btn-block btn-primary" id="msg">Entrar</button>
+  </div>
+ <h6><a href="/cadastrar">Criar uma conta</a></h6>
+</div>
+
+
 <div id="ladoentrar">
 <%= simple_form_for(:user, :defaults => { :input_html => { :class => "form-control" } }, as: resource_name, url: session_path(:user)) do |f| %>
  
@@ -192,7 +203,7 @@
 ['Santa Catarina – Florianópolis', :'Santa Catarina – Florianópolis'],
 ['São Paulo – São Paulo', :'São Paulo – São Paulo'],
 ['Sergipe – Aracaju', :'Sergipe – Aracaju'],
-['Tocantins – Palmas', :'Tocantins – Palmas']] %>
+['Tocantins – Palmas', :'Tocantins – Palmas']], selected: "" %>
 <%= f.input :gender, input_html: { name: 'gender', :value => params[:gender] }, label: ('Gênero:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Macho', :Macho], ['Fêmea', :Fêmea]], selected: "" %>
 <%= f.input :animal, input_html: { name: 'animal', :value => params[:animal] }, label: ('Animal:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Cachorro', :Cachorro], ['Gato', :Gato], ['Outro', :Outro]], selected: "" %>
 <%= f.input :castrado, input_html: { name: 'castrado', :value => params[:castrado] }, label: ('Castrado:  '), :required => false, :as => :select, :collection => [['Todos', :''], ['Sim', :Sim], ['Não', :Não]], selected: "" %>

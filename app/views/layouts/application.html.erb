@@ -52,23 +52,13 @@
 <body>
 
 <div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '485078338315778',
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/pt_BR/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=485078338315778";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -191,13 +181,47 @@
 
     <div class="container">
 
+    <script type="text/javascript">
+      function toggleClock() { 
 
-    <%= yield %>
+            // get the clock 
+        var myClock = document.getElementById('salve2');
+
+        // get the current value of the clock's display property 
+        var displaySetting = myClock.style.display;
+
+        // also get the clock button, so we can change what it says 
+        var clockButton = document.getElementById('clockButton');
+            
+        // now toggle the clock and the button text, depending on current state
+        if (displaySetting == 'block') { 
+          // clock is visible. hide it
+          myClock.style.display = 'none';
+          // change button text
+          clockButton.innerHTML = '<i class="fa fa-bars fa-lg"></i>';
+        }
+        else { 
+          // clock is hidden. show it 
+          myClock.style.display = 'block';
+          // change button text
+          clockButton.innerHTML = '<i class="fa fa-arrow-left fa-lg"></i>';
+        }
+
+      }
+    </script>
+
+    <button data-spy="affix" class="btn btn-primary btn-lg" onclick="toggleClock()" id="clockButton"><i class="fa fa-bars fa-lg"></i></button>
+    
+    <%= yield %>  
+   
+    
     
 </div>
 <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
 </body>
 <footer>
+
+
       <a id="salvar" href="<%= adotar_path %>"><img src="/rodape.png"></a>
       <h5><a href="<%= cadastrar_path %>">Cadastre-se</a> • <a href="<%= adotar_path %>">Animais para adoção</a> ∙ <a href="<%= losts_path %>">Animais perdidos</a> ∙ <a href="/pages/ajuda">Como funciona o site?</a> ∙ <a href="https://www.facebook.com/118543718481622">Página no Facebook</a></h5>
       <h5><a href="/pages/termos2">Termos de Uso</a> ∙ <a href="/pages/termos">Política de Privacidade</a></h5>
