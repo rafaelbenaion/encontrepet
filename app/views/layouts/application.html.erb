@@ -37,11 +37,11 @@
 <%= csrf_meta_tags %>
   <meta name="google-site-verification" content="9951WlXeIqXb4jfUZJTGN68CVX_WwxfGemZPRu71NJY" />
 
-<meta property="og:image" content="http://encontrepet.com/encontrepet3.png" />
+<meta property="og:image" content="<%= og_image_path %>" />
 
 <meta property="og:description" content="Quer adotar um novo amigo? Ou então ajudar um animal abandonado encontrar uma nova família? Encontrepet.com ajuda você! Uma simples rede social de adoção de animais." />
 
-<meta property="og:url"content="http://encontrepet.com" />
+<meta property="og:url"content="<%= request.url %>" />
 
 <meta property="og:title" content="Encontrepet.com" />
 
@@ -214,7 +214,7 @@
     
     <%= yield %>  
    
-    
+
     
 </div>
 <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>

@@ -43,4 +43,16 @@ module ApplicationHelper
 	    @devise_mapping ||= Devise.mappings[:user]
 	  end
 
+	  def og_image_path 
+	  	if request.env['PATH_INFO'] == adotar_path
+        @og_image_path = "http://encontrepet.com/encontrepet3.png"
+        elsif request.env['PATH_INFO'] == posts_path
+        @og_image_path = "http://encontrepet.com/encontrepet3.png"
+        elsif request.env['PATH_INFO'] == "/" 
+        @og_image_path = "http://encontrepet.com/encontrepet3.png"
+        else
+        @og_image_path = @post.image.url
+        end    
+	  end
+
 end
