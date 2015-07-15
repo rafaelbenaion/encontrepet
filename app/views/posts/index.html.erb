@@ -223,11 +223,6 @@
 <div id="cards">
 <div class="row tabela">
 
-<style type="text/css">
-#animal h2 {
-    font-family: "proxima-nova-soft", "proxima-nova", Helvetica, Arial, sans-serif; 
-}
-</style>
 
  
 <% @posts.each do |post| %>
@@ -235,27 +230,27 @@
 
 
     <div class="thumbnail" id="animal">
-      <h2><%= post.name.upcase %></h2>
-      
+      <h3 id="cabeçalho"><strong><%= post.name.downcase.capitalize %></strong></h3>
+    
       <% if post.image %>
       <%= image_tag post.image.url(:thumb), onerror: "this.src='/default_photo.png'", :id => "foto_ficha2" %>
       <% end %>
+ 
+      <div id="adotar_botao">
+
+   
+
+      </div> 
+      <h4><span class="label label-default"><%= post.animal %> | <%= post.gender %> | <%= post.size %></span></h4>
 
       <div id="adotar_botao">
 
    
 
       </div> 
-      <h4><span class="label label-default"><%= post.animal %> | <%= post.gender %> | Porte <%= post.size %></span></h4>
-
-      <div id="adotar_botao">
-
-   
-
-      </div> 
-
+<legend id="riscosempadd"></legend> 
     <div class"final" id="cor">
-       <legend></legend>   
+         
 
           <% if user_signed_in? %>
       <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary", :id => "msg" %>  

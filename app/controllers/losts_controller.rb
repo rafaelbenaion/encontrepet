@@ -33,7 +33,7 @@ class LostsController < ApplicationController
     @lost = current_user.losts.new(lost_params)
     respond_to do |format|
       if @lost.save
-        format.html { redirect_to @lost, notice: 'Lost was successfully created.' }
+        format.html { redirect_to @lost, notice: 'Animal desaparecido foi publicado com sucesso.' }
         format.json { render :show, status: :created, location: @lost }
       else
         format.html { render :new }

@@ -64,9 +64,9 @@
 
 
 
-<%= f.input :telefone, label: "Telefone :", placeholder: 'XX XXXX-XXXX'  %>
+<%= f.input :telefone, label: "Tel 1 :", placeholder: '(DDD) 0000-0000'  %>
 
-<%= f.input :celular, label: "Celular :", placeholder: 'XX XXXX-XXXX'  %>
+<%= f.input :celular, label: "Tel 2 :", placeholder: 'Opcional'  %>
 
 <button type="submit" class="btn btn-success btn-lg btn-block" id="button" data-loading-text="Enviando..." autocomplete="off">Publicar</button>
 <%= link_to 'Cancelar', posts_path, :class => "btn btn-default btn-block", data: { confirm: 'Você tem certeza ?' } %>

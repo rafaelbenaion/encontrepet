@@ -53,7 +53,8 @@ img {
 }
 
 #foto_ficha2 {
-  padding: 8px;
+  padding: 10px;
+  margin-top: 8px;
 
 }
 
@@ -173,6 +174,7 @@ padding-right: 5px;
   margin-right: 0;
   margin-top: 18px;
   border-radius: 4px;
+
 }
 
 
@@ -237,11 +239,26 @@ h2 {
 
 #animal {
 text-align: center;
-border-radius: 2px;
+border-radius: 3px;
 max-width: 300px;
-padding: 4px; 
+padding: 0px; 
 border: 1px solid #303030;
 }
+
+
+#cabeçalho {
+  font-family: "proxima-nova-soft", "proxima-nova", Helvetica, Arial, sans-serif; 
+  background-color: #36A09C;
+  margin: 0;
+  padding: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 1px outset #36A09C;
+  color: white;
+}
+
 
 h4 {
   margin: 4px 2px;
@@ -284,6 +301,7 @@ p {
 
 #cor {
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 #adotar_botao {
