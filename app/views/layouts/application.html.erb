@@ -41,7 +41,7 @@
 
 <meta property="og:description" content="Quer adotar um novo amigo? Ou então ajudar um animal abandonado encontrar uma nova família? Encontrepet.com ajuda você! Uma simples rede social de adoção de animais." />
 
-<meta property="og:url"content="http://encontrepet.com" />
+<meta property="og:url"content="<%= request.url %>" />
 
 <meta property="og:title" content="Encontrepet.com" />
 
@@ -210,11 +210,11 @@
       }
     </script>
 
-    <button data-spy="affix" class="btn btn-primary btn-lg" onclick="toggleClock()" id="clockButton"><i class="fa fa-bars fa-lg"></i></button>
+<button data-spy="affix" class="btn btn-primary btn-lg" onclick="toggleClock()" id="clockButton"><i class="fa fa-bars fa-lg"></i></button>
     
     <%= yield %>  
    
-    
+
     
 </div>
 <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>

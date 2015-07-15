@@ -42,5 +42,22 @@ module ApplicationHelper
 	  def devise_mapping
 	    @devise_mapping ||= Devise.mappings[:user]
 	  end
-	  
+
+
+	  def fotoog 
+	   if request.env['PATH_INFO'] == adotar_path 
+                   
+       	elsif request.env['PATH_INFO'] == posts_path 
+         @fotoog = "http://encontrepet.com/encontrepet3.png"
+        elsif request.env['PATH_INFO'] == "/" 
+         @fotoog = "http://encontrepet.com/encontrepet3.png"          
+        elsif request.env['PATH_INFO'] == losts_path 
+         @fotoog = "http://encontrepet.com/encontrepet3.png"       
+        else 
+        	if @post.image
+         		@fotoog = "http://encontrepet.com" + @post.image.url    
+         	end 
+        end 
+	  	
+	  end
 end
