@@ -1,3 +1,16 @@
+<head>
+
+<title><%= @post.name %></title>
+
+<meta property="og:image" content="<%= @post.image.url %>" />
+
+<meta property="og:description" content="<%= @post.about %>" />
+
+<meta property="og:url"content="<%= request.url %>" />
+
+<meta property="og:title" content="Meu nome é <%= @post.name.downcase.capitalize %>, preciso de uma família." />
+</head>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,6 +32,10 @@
 }
 
 </style>
+
+<head>
+<title>FUNCIONA - Adote!</title>
+</head>
 
 
 <div class="col-md-3">
