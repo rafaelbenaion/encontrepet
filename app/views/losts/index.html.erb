@@ -125,7 +125,6 @@
 
     <div class="thumbnail" id="animal">
       <h2 id="entrar2"><%= lost.name %></h2>
-      
       <% if lost.photo %>
       <%= image_tag lost.photo.url(:thumb), onerror: "this.src='/default_photo.png'", :id => "foto_ficha2" %>
       <% end %>
