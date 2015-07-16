@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Encontrepet.com - Adote !</title>
+  <title>Encontrepet.com - Adote uma vida !</title>
   
  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' %>
@@ -37,17 +37,20 @@
 <%= csrf_meta_tags %>
 <meta name="google-site-verification" content="9951WlXeIqXb4jfUZJTGN68CVX_WwxfGemZPRu71NJY" />
 
-<meta property="og:image" content="http://encontrepet.com/encontrepet3.png" />
+<meta property="og:image" content="<%= @meta[:image] %>" />
 
-<meta property="og:description" content="Quer adotar um novo amigo? Ou então ajudar um animal abandonado encontrar uma nova família? Encontrepet.com ajuda você! Uma simples rede social de adoção de animais." />
+<meta property="og:type" content="<%= @meta[:type] %>" />
+
+<meta property="og:description" content="<%= @meta[:description] %>" />
 
 <meta property="og:url"content="<%= request.url %>" />
 
-<meta property="og:title" content="Encontrepet.com" />
+<meta property="og:title" content="<%= @meta[:title] %>" />
 
 <meta property="fb:admins" content="100002350247571" />
 
 <meta property="fb:app_id" content="485078338315778" />
+
 
 </head>
 

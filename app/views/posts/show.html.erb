@@ -21,11 +21,6 @@
 
 </style>
 
-<head>
-<title>FUNCIONA - Adote!</title>
-</head>
-
-
 <div class="col-md-3">
 
 <div class="jumbotron" data-spy="affix" id="salve2">
@@ -80,14 +75,14 @@
 <div class="col-md-5">
 <div class="jumbotron" id="ficarmenor32">
 </br>
-  <fieldset>
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;">
           <thead>
        </br >
       </thead>
       <tbody>
       <tr>
-      <td width="40%" align="left"> 
+      <td width="50%" align="left"> 
 
       <% if @post.image %>
       <%= image_tag @post.image.url(:thumb)%>
@@ -97,8 +92,6 @@
 
       <td align="left">
     <legend id="riscosempadd"><h2><%= @post.name %>, <%= @post.age %>
-
-   
     
 
     </h2></legend>
@@ -121,10 +114,12 @@
     </tbody>
     </table>
     
-  </fieldset>
+
 
 <div class="row" style="padding:0; margin:0;">
+  <div style="padding:10px;padding-top:30px;" id="entrar" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 <div class="col-md-5" style="padding:0;padding-right:5px;">
+
   <table class="table">
       <thead>
  </br >
@@ -198,8 +193,8 @@
       <h5><strong>Dono:</strong> <%= @post.user.name %></h5>
       <h5><strong>Cidade:</strong> <%= @post.cidade %></h5>
       <legend></legend>
-      <h5><strong>Telefone:</strong> <a href="tel:<%= @post.telefone %>"><%= @post.telefone %></a></h5>
-      <h5><strong>Celular:</strong> <a href="tel:<%= @post.celular %>"><%= @post.celular %></a></h5>
+      <h5><strong>Telefone 1:</strong> <a href="tel:<%= @post.telefone %>"><%= @post.telefone %></a></h5>
+      <h5><strong>Telefone 2:</strong> <a href="tel:<%= @post.celular %>"><%= @post.celular %></a></h5>
       <h5><strong>E-mail:</strong> <a href="mailto:<%= @post.user.email %>"><%= @post.user.email %></a></h5>
       </div>
       <div class="modal-footer">
@@ -210,7 +205,6 @@
 </div>
 </div>
 </div>
-<div id="entrar" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 
   </div>
 <div class="col-md-4">

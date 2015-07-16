@@ -16,6 +16,7 @@ class LostsController < ApplicationController
   # GET /losts/1
   # GET /losts/1.json
   def show
+         @meta = { title: 'PROCURA-SE ! <%= @lost.name.downcase.capilize %> em <%= @lost.city.downcase.capilize %>.', description: '<%= @lost.about %>. Por Encontrepet.com', image: 'http://encontrepet.com<%= @lost.photo.url %>', type: 'article' }
   end
 
   # GET /losts/new
