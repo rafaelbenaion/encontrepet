@@ -26,7 +26,7 @@ end
   # GET /posts/1
   # GET /posts/1.json
   def show
-     @meta = { title: 'Meu nome é <%= @post.name.downcase.capilize %>, me adote!', description: '<%= @post.about %>. Por Encontrepet.com', image: 'http://encontrepet.com<%= @post.image.url %>', type: 'article' }
+     @meta = { title: 'Meu nome é '+@post.name.downcase.capitalize+', me adote!', description: @post.about+'. Por Encontrepet.com', image: 'http://encontrepet.com'+@post.image.url, type: 'article' }
   end
 
   # GET /posts/new
