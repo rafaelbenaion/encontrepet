@@ -232,36 +232,39 @@
     <div class="thumbnail" id="animal">
       <h3 id="cabeçalho"><strong><%= post.name.downcase.capitalize %></strong></h3>
     
+      <div id="adotar_botao">
+      </div> 
+      <h4><span style="border-radius:0;margin:0;background-color: transparent;color: #777;" class="label label-default"><%= post.animal %> • <%= post.gender %> • <%= post.size %></span></h4>
+
       <% if post.image %>
       <%= image_tag post.image.url(:thumb), onerror: "this.src='/default_photo.png'", :id => "foto_ficha2" %>
       <% end %>
- 
-      <div id="adotar_botao">
 
-   
-
-      </div> 
-      <h4><span class="label label-default"><%= post.animal %> | <%= post.gender %> | <%= post.size %></span></h4>
-
-      <div id="adotar_botao">
-
-   
-
-      </div> 
-<legend id="riscosempadd"></legend> 
-    <div class"final" id="cor">
+      <div style="padding:6px 0;border-radius:0;margin:0;" data-href="<%= post_path(post) %>" id="entrarfb" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
          
 
           <% if user_signed_in? %>
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary", :id => "msg" %>  
-        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-success start-conversation">Chat <i class="fa fa-comments"></i></a></h5>
-      <% else %>
-      <h5> <%= link_to "Ver informações", post , :class => "btn btn-primary", :id => "msg" %> 
-        
-        <a id="msg" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem"  class="btn btn-success start-conversation" data-toggle="modal" data-target="#myModal3">Chat <i class="fa fa-comments"></i></a></h5>
+
+     <div class="btn-group btn-group-justified" role="group" aria-label="...">
+     <div class="btn-group" role="group" aria-label="...">
+     <a style="border-left:none;"id="msg3" class="btn btn-default btn-block" href="<%= post_path(post) %>" ><i class="fa fa-eye fa-lg"></i> Ver</a>
+     </div>
+     <div class="btn-group" role="group" aria-label="...">
+     <a id="msg3" data-tooltip="tooltip" data-placement="bottom" title="Enviar mensagem" href="" data-sid="<%= current_user.id %>", data-rip="<%= post.user.id %>" class="btn btn-default btn-block start-conversation"><i class="fa fa-comments"></i> Chat</a>
+      </div>
+      </div>
+    <% else %>
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group" aria-label="...">
+      <a style="border-left:none;"id="msg3" class="btn btn-default btn-block" href="<%= post_path(post) %>" ><i class="fa fa-eye fa-lg"></i> Ver</a>
+      </div>
+      <div class="btn-group" role="group" aria-label="...">
+     <a id="msg3" data-html="true" tabindex="0" class="btn btn-default btn-block start-conversation" role="button" data-toggle="popover" data-trigger="focus" title="Aviso!" data-content="Você precisa se <a href='<%= cadastrar_path %>'>Cadastrar</a> ou <a href='<%= entrar_path %>'>Logar</a> para usar o Chat." data-placement="bottom"><i class="fa fa-comments"></i> Chat</a>
+        </div>
+</div>
       <% end %>
 
-    </div>
+   
 
 </div>
  </div>
@@ -275,25 +278,4 @@
 <% end %>
 
 </div>
-
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Bem vindo!</h4>
-      </div>
-      <div class="modal-body">
-        <h4>Você precisa primeiro se <%= link_to "Cadastrar", cadastrar_path%> ou <%= link_to "Logar", entrar_path%> para usar o Chat.</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
 </div>

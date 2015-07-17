@@ -77,7 +77,7 @@
         <a  id="msg" data-placement="bottom" href="" data-sid="<%= current_user.id %>", data-rip="<%= @user.id %>" class="btn btn-success start-conversation">Enviar mensagem</a></h5>
         <% end %>
     <% else %>
-        <button id="msg" class="btn btn-success" data-toggle="modal" data-target="#myModal3">Enviar mensagem</button>
+        <button id="msg" class="btn btn-success" data-toggle="popover" data-trigger="focus" title="Aviso!" data-content="Você precisa se <a href='<%= cadastrar_path %>'>Cadastrar</a> ou <a href='<%= entrar_path %>'>Logar</a> para usar o Chat." data-placement="bottom" data-html="true" tabindex="0" >Enviar mensagem</button>
     <% end %>
 
     </h2></legend>
@@ -128,23 +128,6 @@
     </div>
 <% end %>
  
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Bem vindo!</h4>
-      </div>
-      <div class="modal-body">
-        <h4>Você precisa primeiro se <%= link_to "Cadastrar", cadastrar_path%> ou <%= link_to "Logar", entrar_path%> para usar o Chat.</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 </div>
 
 <% if user_signed_in? %>

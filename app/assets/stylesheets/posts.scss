@@ -173,6 +173,7 @@ padding-right: 5px;
   padding: 8px;
   margin-right: 0;
   margin-top: 18px;
+  margin-left: 10px;
   border-radius: 4px;
 
 }
@@ -183,6 +184,12 @@ padding-right: 5px;
   padding: 2.5px 8px;
   border-color: #666;
   border-radius: 0;
+}
+
+#msg3 {
+  border-right: none;
+  border-radius: 0;
+  border-bottom: none;
 }
 
 
@@ -196,6 +203,7 @@ padding-right: 5px;
   padding-left: 0;
   padding-right: 0;
   text-align: center;
+
 
 }
 
@@ -243,6 +251,14 @@ border-radius: 3px;
 max-width: 300px;
 padding: 0px; 
 border: 1px solid #303030;
+}
+
+#animal img {
+  max-width: 90%;
+  margin: 10px auto;
+  padding: 0px;
+  border: 8px solid #e3e3e3;
+  border-radius: 4px;
 }
 
 
@@ -382,8 +398,9 @@ p {
   padding: 10px;
   background-color: white;
   margin-top: 30px;
-  border-radius: 3px;
+  border-radius: 5px;
   max-width: 191px;
+  border: 7px solid #3CB4B0;
   margin-left: 30px
 }
 
@@ -629,6 +646,19 @@ li.media a {
   text-align: center;
   margin: 0 auto;
 }
+
+#entrarfb {
+  color: #666;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #e6e6e6;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 30px;
+  }
 
 #entrar2 {
   color: #666;

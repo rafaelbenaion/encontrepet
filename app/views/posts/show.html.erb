@@ -82,7 +82,7 @@
       </thead>
       <tbody>
       <tr>
-      <td width="50%" align="left"> 
+      <td width="55%" align="left"> 
 
       <% if @post.image %>
       <%= image_tag @post.image.url(:thumb)%>
@@ -117,7 +117,8 @@
 
 
 <div class="row" style="padding:0; margin:0;">
-  <div style="padding:10px;padding-top:30px;" id="entrar" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  <div style="padding:10px;" id="entrarfb" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  <h5 id="entrar" style="margin:0;padding:5px;">Compartilhe com seus amigos. <i class="fa fa-hand-o-up"></i></h5>
 <div class="col-md-5" style="padding:0;padding-right:5px;">
 
   <table class="table">
@@ -179,7 +180,7 @@
 
 
 <div id="botaofinal">
-<button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">Contatos</button>
+<button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">Quero adotar <i class="fa fa-heart"></i></button>
 <%= link_to 'Voltar', posts_path, :class => "btn btn-default btn-block"  %>
      
 <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
