@@ -236,7 +236,7 @@
     
       <div id="adotar_botao">
       </div> 
-      <h4><span style="border-radius:0;margin:0;background-color: transparent;color: #777;" class="label label-default"><%= post.animal %> • <%= post.gender %> • <%= post.size %></span></h4>
+      <h4><span style="border-radius:0;margin:0;background-color: transparent;color: #777;" class="label label-default"><%= post.animal %> | <%= post.gender %> | <%= post.size %></span></h4>
 
       <% if post.image %>
       <%= image_tag post.image.url(:thumb), onerror: "this.src='/default_photo.png'", :id => "foto_ficha2" %>
