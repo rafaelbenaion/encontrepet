@@ -46,8 +46,10 @@
 <% end %>
 <% end %>
 
-</div>
 
+<h6 style="text-align:center;"><a href="/pages/ajuda">Dúvidas</a> | <a href="/pages/contato">Contato</a> | <a href="/pages/termos2">Termos</a></h6>
+
+</div>
 </div>
 
 
@@ -239,7 +241,7 @@
       <% if post.image %>
       <%= image_tag post.image.url(:thumb), onerror: "this.src='/default_photo.png'", :id => "foto_ficha2" %>
       <% end %>
-
+      <p style="font-family:'proxima-nova-soft','proxima-nova',Helvetica,Arial,sans-serif;margin:0; color: #777;padding-bottom:15px;"><strong><%= post.about %></strong></p>
       <div style="padding:6px 0;border-radius:0;margin:0;" data-href="<%= post_path(post) %>" id="entrarfb" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
          
 
@@ -274,8 +276,10 @@
 </div>
 
 <% if @posts.count == 0 %>
-  <h4 id="entrar2"><strong>Nenhum animal encontrado.</strong></h4>
+<div class="jumbotron" id="salve" style="background-color:#3CB4B0;border:none;">
+  <h4 id="entrar2"><strong>Nenhum animal encontrado!</strong></h4>
 <% end %>
+</div>
 
 </div>
 </div>

@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
 
-  
   devise_scope :user do 
     get "cadastrar", to: "devise/registrations#new", as: :cadastrar
   end

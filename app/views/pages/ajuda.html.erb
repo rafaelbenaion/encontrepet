@@ -4,7 +4,7 @@
 <h6 style="color=#444; padding:0; padding-left:3px;"><strong>INÍCIO</strong></h6>
 <button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default " id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
 <button onclick="location.href='/pages/ajuda';" type="submit" class="btn btn-block btn-default  active" id="msg2"><i class="fa fa-info-circle" id="i3"></i> Preciso de ajuda</button>
-<button onclick="location.href='/pages/ajuda';" type="submit" class="btn btn-block btn-default " id="msg2"><i class="fa fa-phone" id="i"></i> Contato</button>
+<button onclick="location.href='/pages/contato';" type="submit" class="btn btn-block btn-default " id="msg2"><i class="fa fa-phone" id="i"></i> Contato</button>
 <h6 style="color=#444; padding:0; padding-left:3px;"><strong>TERMOS</strong></h6>
 <button onclick="location.href='/pages/termos2';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-legal " id="i22"></i> Termos de Uso</button>
 <button onclick="location.href='/pages/termos';" type="submit" class="btn  btn-block btn-default " id="msg2"><i class="fa fa-lock fa-lg" id="i2"></i> Política de Privacidade</button>
@@ -16,9 +16,40 @@
 <div class="col-md-9">
 
 
+
+<div class="jumbotron" id="salve22" style="max-width:none;">
+<h3><i class="fa fa-question-circle"></i> Duvidas frequentes:</h3>
+<legend></legend>
+<h5><strong><i class="fa fa-hand-o-right"></i> Preciso de uma conta para postar um animal no site?</strong></h5>
+<h5>Sim, é necessário fazer um cadastro no site para utilizar todas funcionalidades. <a href="<%= cadastrar_path %>">Cadastre-se.</a></h5>
+<legend></legend>
+<h5><strong><i class="fa fa-hand-o-right"></i> Como divulgar um animal para doação?</strong></h5>
+<h5>Clique em "Doar" no menu lateral ou em "Crie um post" no banner de dicas. (É necessário estar <a href="<%= entrar_path %>">logado</a> com a sua conta).<h5>
+<legend></legend>
+<h5><strong><i class="fa fa-hand-o-right"></i> Como divulgar um perdido?</strong></h5>
+<h5>Clique em "Animais perdidos" e em seguina no banner de dicas: "Seu amigo escapou? Clique aqui". (É necessário estar <a href="<%= entrar_path %>">logado</a> com a sua conta).<h5>
+<legend></legend>
+<h5><strong><i class="fa fa-hand-o-right"></i> Como apagar ou editar uma postagem?</strong></h5>
+<h5>Logue na sua conta, depois vá em "Meus animais" (Menu lateral) ou "Meu perfil" (Barra de navegação superior). Lá você terá botões para editar ou apagar uma de suas postagens. (Também é possível fazer isso diretamente da postagem, basta estar logado em sua conta).<h5>
+<legend></legend>
+<h5><strong><i class="fa fa-hand-o-right"></i> Como editar informações da minha conta?</strong></h5>
+<h5>Logue na sua conta, depois vá em "Editar minha conta" (menu lateral) ou clique em <i class="fa fa-cog" id="i3"></i>, depois "Editar minha conta".<h5>
+<legend></legend>
+<h5><strong><i class="fa fa-hand-o-right"></i> Como ver minhas mensagens do chat?</strong></h5>
+<h5>Clique em <i class="fa fa-comments" id="i"></i> na barra superior de navegação. (Em algumas vezes é necessário clicar novamente após ser redirecionado).<h5>
+<legend></legend>
+<h5><strong><i class="fa fa-hand-o-right"></i> Encontrepet.com resgata animais e/ou disponibiliza abrigo?</strong></h5>
+<h5>Não. Encontrepet é uma plataforma para ajudar na divulgação de animais para adoação e animais perdidos. Não resgatamos animais e não disponibilizamos abrigos.</h5>
+<legend></legend>
+
+<h5><strong><i class="fa fa-hand-o-right"></i> Continua com alguma dúvida?</strong></h5>
+<h5>Envie um email para: encontrepet.com@gmail.com, ou entre em contato pela <a href="https://www.facebook.com/118543718481622">página do facebook.</a></h5>
+<legend></legend>
+</div>
+
 <div class="jumbotron" id="salve">
   <div id="comodoar">
-    <h4><strong>Dica:</strong></h4>
+    <h4><strong>Dica 1:</strong></h4>
   </div>
 <div class="texto">
 <div class="bs-example">
@@ -76,13 +107,11 @@
 
 <div class="jumbotron" id="salve">
   <div id="comodoar">
-    <h4><strong>Contatos:</strong></h4>
+    <h4><strong>Dica 2:</strong></h4>
   </div>
-<h3>Precisa de ajuda?</h3>
-<legend></legend>
-<h4>Entre em contato: encontrepet.com@gmail.com</h4>
-<h4>Ou pela nossa <a href="https://www.facebook.com/118543718481622">Página do Facebook</a></h4>
-</div>
+  
+<a href="<%= new_lost_path %>"><img id="fala" src="/FALA3.png"></a>
+  </div>
 
 </br>
 </br>
