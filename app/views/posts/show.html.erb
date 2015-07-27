@@ -29,6 +29,7 @@
 <button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default active" id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
 <button onclick="location.href='<%= losts_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-search" id="i3"></i> Animais perdidos</button>
 <button onclick="location.href='<%= new_post_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-tag " id="i2"></i> Doar</button>
+<button onclick="location.href='/pages/campanhas';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-usd" id="i1"></i> Campanhas <span class="label label-warning">Breve</span></button>
 
 
 <% if user_signed_in? %>
@@ -42,7 +43,6 @@
 
 
 <% else %>
-<h6 style="color=#444; padding:0; padding-left:3px;"><strong>ENTRAR</strong></h6>
 
 <div id="ladoentrar2">
   <div class="actions">
@@ -61,13 +61,37 @@
   <div class="actions">
     <button type="submit" class="btn btn-success btn-block btn-primary" id="msg">Entrar</button>
   </div>
- <h6><a href="/cadastrar">Criar uma conta</a></h6>
 </div>
 
 <% end %>
 <% end %>
 
 <h6 style="text-align:center;"><a href="/pages/ajuda">Dúvidas</a> | <a href="/pages/contato">Contato</a> | <a href="/pages/termos2">Termos</a></h6>
+
+<div id="anuncio">
+<script type="text/javascript"> 
+clicksor_enable_adhere = false; 
+
+clicksor_default_url = '';
+clicksor_banner_border = '#99CC33'; 
+clicksor_banner_ad_bg = '#FFFFFF';
+clicksor_banner_link_color = '#000000'; 
+clicksor_banner_text_color = '#666666';
+clicksor_layer_border_color = '';
+clicksor_layer_ad_bg = ''; 
+clicksor_layer_ad_link_color = '';
+clicksor_layer_ad_text_color = ''; 
+clicksor_text_link_bg = '';
+clicksor_text_link_color = ''; 
+clicksor_enable_text_link = false;
+     
+clicksor_banner_text_banner = false;
+clicksor_banner_image_banner = true; 
+clicksor_enable_layer_pop = false;
+clicksor_enable_pop = false;
+</script>
+ <script type="text/javascript" src="http://b.yu0123456.com/show.php?nid=1&amp;pid=349913&amp;adtype=3&amp;sid=592458"></script>
+</div>
 
 
 </div>
@@ -201,6 +225,30 @@
       <h5><strong>Telefone 2:</strong> <a href="tel:<%= @post.celular %>"><%= @post.celular %></a></h5>
       <h5><strong>E-mail:</strong> <a href="mailto:<%= @post.user.email %>"><%= @post.user.email %></a></h5>
       </div>
+      <div id="anuncio">
+<script type="text/javascript"> 
+clicksor_enable_adhere = false; 
+
+clicksor_default_url = '';
+clicksor_banner_border = '#99CC33'; 
+clicksor_banner_ad_bg = '#FFFFFF';
+clicksor_banner_link_color = '#000000'; 
+clicksor_banner_text_color = '#666666';
+clicksor_layer_border_color = '';
+clicksor_layer_ad_bg = ''; 
+clicksor_layer_ad_link_color = '';
+clicksor_layer_ad_text_color = ''; 
+clicksor_text_link_bg = '';
+clicksor_text_link_color = ''; 
+clicksor_enable_text_link = false;
+     
+clicksor_banner_text_banner = false;
+clicksor_banner_image_banner = true; 
+clicksor_enable_layer_pop = false;
+clicksor_enable_pop = false;
+</script>
+ <script type="text/javascript" src="http://b.yu0123456.com/show.php?nid=1&amp;pid=349913&amp;adtype=2&amp;sid=592458"></script>
+</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
       </div>

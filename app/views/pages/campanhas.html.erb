@@ -1,0 +1,103 @@
+
+
+<div class="col-md-3">
+
+<div class="jumbotron" data-spy="affix" id="salve2">
+<h6 style="color=#4
+}44; padding:0; padding-left:3px;"><strong>PÁGINAS</strong></h6>
+<button onclick="location.href='<%= adotar_path %>';" type="submit" class="btn btn-block btn-default" id="msg2"><i class="fa fa-paw" id="i"></i> Adotar</button>
+<button onclick="location.href='<%= losts_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-search" id="i3"></i> Animais perdidos</button>
+<button onclick="location.href='<%= new_post_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-tag " id="i2"></i> Doar</button>
+<button onclick="location.href='/pages/campanhas';" type="submit" class="btn  btn-block btn-default active" id="msg2"><i class="fa fa-usd" id="i1"></i> Campanhas <span class="label label-warning">Breve</span></button>
+
+<% if user_signed_in? %>
+<h6 style="color=#444; padding:0; padding-left:3px;"><strong>CONTA</strong></h6>
+<button onclick="location.href='<%= id_path(current_user.profile_name) %>';" type="submit" class="btn btn-block btn-default" id="msg2"><i class="fa fa-user" id="i"></i> Meu perfil</button>
+<button onclick="location.href='#';" type="submit" class="btn btn-block btn-default" id="msg2"  data-toggle="modal" data-target="#myModal2"><i class="fa fa-envelope" id="i22"></i> Mensagens</button>
+<button onclick="location.href='<%= edit_user_registration_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-cog" id="i"></i> Editar minha conta</button>
+<button onclick="location.href='<%= sair_path %>';" type="submit" class="btn  btn-block btn-default" id="msg2"><i class="fa fa-sign-out" id="i3"></i> Sair</button>
+
+<h6>Logado como <%= current_user.name %></h6>
+
+
+<% else %>
+
+<div id="ladoentrar2">
+  <div class="actions">
+    <button onclick="location.href='<%= entrar_path %>';" type="submit" class="btn btn-success btn-block btn-primary" id="msg">Entrar</button>
+  </div>
+</div>
+
+
+<div id="ladoentrar">
+<%= simple_form_for(:user, :defaults => { :input_html => { :class => "form-control" } }, as: resource_name, url: session_path(:user)) do |f| %>
+ 
+
+ <%= f.input :email, label: false, :placeholder => "seu@email.com" %>
+ <%= f.input :password, label: false, :placeholder => "senha" %>
+  <div class="actions">
+    <button type="submit" class="btn btn-success btn-block btn-primary" id="msg">Entrar</button>
+  </div>
+</div>
+
+<% end %>
+<% end %>
+
+<h6 style="text-align:center;"><a href="/pages/ajuda">Dúvidas</a> | <a href="/pages/contato">Contato</a> | <a href="/pages/termos2">Termos</a></h6>
+
+<div id="anuncio">
+<script type="text/javascript"> 
+clicksor_enable_adhere = false; 
+
+clicksor_default_url = '';
+clicksor_banner_border = '#99CC33'; 
+clicksor_banner_ad_bg = '#FFFFFF';
+clicksor_banner_link_color = '#000000'; 
+clicksor_banner_text_color = '#666666';
+clicksor_layer_border_color = '';
+clicksor_layer_ad_bg = ''; 
+clicksor_layer_ad_link_color = '';
+clicksor_layer_ad_text_color = ''; 
+clicksor_text_link_bg = '';
+clicksor_text_link_color = ''; 
+clicksor_enable_text_link = false;
+     
+clicksor_banner_text_banner = false;
+clicksor_banner_image_banner = true; 
+clicksor_enable_layer_pop = false;
+clicksor_enable_pop = false;
+</script>
+ <script type="text/javascript" src="http://b.yu0123456.com/show.php?nid=1&amp;pid=349913&amp;adtype=3&amp;sid=592458"></script>
+</div>
+
+
+
+</div>
+</div>
+
+<div class="col-md-9">
+
+
+
+<div class="jumbotron" id="salve22" style="max-width:none;">
+<h2><img src="/encontrepet2.png" style="max-width: 150px;padding-bottom:0;margin-bottom:15px;">
+<strong>+  </strong><i class="fa fa-usd" id="i1"></i> Campanhas</h2>
+<legend></legend>
+<h4>Você poderá <strong>criar campanhas</strong> para arrecadar doações e financiar <strong>uma boa causa</strong> como:</br></br> Verbas para construção de um abrigo, custear despesas médicas de um animal ou então arrecadar dinheiro para comprar ração para animais abandonados.</h4>
+</br>
+<h4><strong>Aguarde</strong>, iremos postar mais novidades sobre o novo sistema de campanhas.</h4>
+
+</br>
+<div style="padding:15px 0;border-radius:0;margin:0;" data-href="http://facebook.com/encontrepet" id="entrarfb" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+</div>
+
+
+<h5 id="entrar"><strong>Em breve no Encontrepet.com, feito com <i class="fa fa-heart" style="color:#FF3030;"></i> para os animais.</strong></h5>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
