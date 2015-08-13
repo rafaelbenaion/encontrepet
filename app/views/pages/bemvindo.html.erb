@@ -58,7 +58,15 @@ padding: 30px;
 <h1>BEM VINDO!</h1>
 <h5 id="b">Encontrepet.com é uma simples rede social que facilita a adoção de animais que precisam de uma família.</h5>
 <a href="<%= adotar_path %>" class="btn btn-success btn-lg">Continuar</a>
+</br>
 
+</br>
+<div class="jumbotron" id="ficarmenor">
+<h5>Usuários cadastrados:</h5>
+<% @users.each do |user| %>
+<h4><%= user.first_name %> <%= user.last_name %></h4>
+<% end %>
+</div>
 
 </div>
 
